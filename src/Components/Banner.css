@@ -1,0 +1,8 @@
+/* Optional CSS */
+.custom-text-overlay {
+  position: absolute;
+  bottom: 200px;
+  left: 30px;
+  color: white;
+  text-shadow: 0 0 10px black;
+}
