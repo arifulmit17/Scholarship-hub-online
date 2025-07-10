@@ -31,10 +31,10 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unSubscribe=onAuthStateChanged(auth,currentUser=>{
             setUser(currentUser)
-            if(currentUser?.email){
-                axios.post(`${import.meta.env.VITE_API_URL}/jwt`,{email: currentUser?.email}).then(res=>
-                    localStorage.setItem('token',res.data.token))
-            }
+            // if(currentUser?.email){
+            //     axios.post(`${import.meta.env.VITE_API_URL}/jwt`,{email: currentUser?.email}).then(res=>
+            //         localStorage.setItem('token',res.data.token))
+            // }
             
             setLoader(false)
         })

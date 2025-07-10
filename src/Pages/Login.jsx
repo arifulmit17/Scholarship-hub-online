@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Contexts/AuthContext';
 import { auth } from '../Firebase/Firebase.init';
+import { saveUserInDb } from '../api/Utils';
 
 const Login = () => {
 	const navigate=useNavigate();
@@ -34,11 +35,19 @@ const Login = () => {
 			  })
 	}
 	
-	const handleLogin=e=>{
+	const handleLogin=async e=>{
 		e.preventDefault();
 		const email=e.target.email.value;
 		const password=e.target.password.value;
-		LoginUser(email,password).then(()=>{
+		LoginUser(email,password).then((data)=>{
+            const result=data
+            console.log(result);
+            const userData={
+                name: result?.user?.displayName,
+                email: result?.user?.email,
+                image: result?.user?.photoURL
+            }
+            saveUserInDb(userData)
 			Swal.fire({
 			position: "top-end",
 			icon: "success",
@@ -56,6 +65,8 @@ const Login = () => {
 			footer: '<a href="#">Why do I have this issue?</a>'
 			});
 		})
+        
+       
 	}
 	return (
 		<div className="w-full mx-auto max-w-md p-4 rounded-md shadow sm:p-8">

@@ -19,10 +19,10 @@ const Navbar = () => {
     }
     const links=<>
       <li><Link to={'/'}>Home</Link></li>
-      {/* <li><NavLink to={'/findtutors'}>All Tutors and Tutorials</NavLink></li>
-      <li><Link to={'/addtutorials'}>Add Tutorials</Link></li>
+       <li><NavLink to={'/allscholarship'}>All Scholarships</NavLink></li>
+      {/* <li><Link to={'/addtutorials'}>Add Tutorials</Link></li>
       {user && <><li><Link to={`/mytutorials/${user?.email}`}>My Tutorials</Link></li></>}
-      {user && <><li><Link to={`/mytutors/${user?.email}`}>My Tutors </Link></li></>} */}
+      {user && <><li><Link to={`/mytutors/${user?.email}`}>My Tutors </Link></li></>}  */}
       <li><Link to={'/register'}>Register</Link></li>
     </>
     return (
