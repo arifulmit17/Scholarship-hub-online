@@ -17,7 +17,7 @@ const AllScholarship = () => {
     return (
         <div >
             {
-                data.map(scholarship=><SchoarshipCard key={scholarship._id} scholarship={scholarship}></SchoarshipCard>)
+                data.map(scholarship=><SchoarshipCard  scholarship={scholarship}></SchoarshipCard>)
             }
         </div>
     );

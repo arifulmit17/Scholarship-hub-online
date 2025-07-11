@@ -20,13 +20,14 @@ const Navbar = () => {
     const links=<>
       <li><Link to={'/'}>Home</Link></li>
        <li><NavLink to={'/allscholarship'}>All Scholarships</NavLink></li>
+       <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
       {/* <li><Link to={'/addtutorials'}>Add Tutorials</Link></li>
       {user && <><li><Link to={`/mytutorials/${user?.email}`}>My Tutorials</Link></li></>}
       {user && <><li><Link to={`/mytutors/${user?.email}`}>My Tutors </Link></li></>}  */}
       <li><Link to={'/register'}>Register</Link></li>
     </>
     return (
-        <div className="navbar sticky top-0 z-[100] dark:text-white ">
+        <div className="navbar sticky top-0 z-[100] bg-white dark:text-white ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

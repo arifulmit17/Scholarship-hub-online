@@ -1,8 +1,9 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 const SchoarshipCard = ({scholarship}) => {
     console.log(scholarship);
-  const  {University_Name,
+  const  {_id,University_Name,
 University_Image,
 Scholarship_category,
 University_location,
@@ -29,7 +30,9 @@ Rating
         </div>
 
         <div className="card-actions justify-end mt-4">
-          <button className="btn btn-primary">Details</button>
+          <NavLink to={`/scholarshipdetails/${_id}`}>
+<button className="btn btn-primary">Details</button>
+        </NavLink>
         </div>
       </div>
     </div>

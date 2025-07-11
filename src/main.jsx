@@ -14,6 +14,12 @@ import AuthProvider from './Contexts/AuthProvider.jsx';
 import AllScholarship from './Pages/AllScholarship.jsx';
 import ErrorPage from './Pages/Errorpage.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import PrivateRoutes from './PrivateRoutes.jsx';
+import ScholarshipDetails from './Pages/ScholarshipDetails.jsx';
+import Payment from './Pages/Payment.jsx';
+import Userprofile from './Pages/Dashboard/Userprofile.jsx';
+import DashboardLayout from './Layouts/DashboardLayout.jsx';
+import Stats from './Components/Stats.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -36,12 +42,41 @@ const router = createBrowserRouter([
       {
         path: '/allscholarship',
         Component: AllScholarship
+      },
+      {
+        path: '/scholarshipdetails/:id',
+        element: <PrivateRoutes>
+          <ScholarshipDetails></ScholarshipDetails>
+        </PrivateRoutes>
+      },
+      {
+        path: '/payment',
+        Component: Payment
       }
     ]
   },
   {
     path: '/*',
     element: <ErrorPage></ErrorPage>
+  },
+  {
+    path: '/dashboard',
+    element: <PrivateRoutes>
+      <DashboardLayout></DashboardLayout>
+    </PrivateRoutes>,
+    children: [
+      {
+        index:true,
+        element: <PrivateRoutes>
+          <Stats></Stats>
+        </PrivateRoutes>,
+        
+      },
+      {
+        path: '/dashboard/myprofile',
+        Component: Userprofile
+      }
+    ]
   }
 ]);
 
