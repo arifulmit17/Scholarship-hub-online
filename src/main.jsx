@@ -23,6 +23,8 @@ import Stats from './Components/Stats.jsx';
 import ManageUsers from './Pages/Dashboard/Admin/ManageUsers.jsx';
 import AllScholarshipDashboard from './Pages/Dashboard/AllScholarshipDashboard.jsx';
 import AddScholarship from './Pages/Dashboard/AddScholarship.jsx';
+import MyApplications from './Pages/Dashboard/User/MyApplications.jsx';
+import ApplicationDetails from './Pages/Dashboard/User/ApplicationDetails.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -78,6 +80,18 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/myprofile',
         Component: Userprofile
+      },
+      {
+        path: '/dashboard/myapplication',
+        element: <PrivateRoutes>
+          <MyApplications></MyApplications>
+        </PrivateRoutes>
+      },
+      {
+        path: '/dashboard/applicationdetails/:id',
+        element: <PrivateRoutes>
+          <ApplicationDetails></ApplicationDetails>
+        </PrivateRoutes>
       },
       {
         path: '/dashboard/manageusers',

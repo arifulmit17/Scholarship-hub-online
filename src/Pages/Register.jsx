@@ -110,7 +110,7 @@ const Register = () => {
                <input name='email' type="email" placeholder="mail@site.com" required className="input w-full" />
                 {/* Password input  */}
                 <div className='relative'>
-                <input type={showpassword ? 'text' : 'password'} name='password' required placeholder="Password" minLength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" className="input w-full" />
+                <input type={showpassword ? 'text' : 'password'} name='password' required placeholder="Password" minLength="6" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}$" className="input w-full" />
                 
                 <button onClick={()=>{setShowpassword(!showpassword)}} className='btn btn-xs absolute bottom-2 right-4 '>
                 {

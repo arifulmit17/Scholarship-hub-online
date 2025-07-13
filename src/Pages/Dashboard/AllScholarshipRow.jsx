@@ -16,7 +16,7 @@ const AllScholarshipRow = ({scholarship}) => {
     
         
         <th>
-            <NavLink to={`/scholarshipdetails/${scholarship?._id}`}>
+            <NavLink to={`/dashboard/applicationdetails/${scholarship?._id}`}>
 <button className="btn btn-xs">Details</button>
         </NavLink>
             <button  className="btn  btn-xs">Edit</button>

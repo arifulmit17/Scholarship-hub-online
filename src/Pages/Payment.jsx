@@ -4,11 +4,11 @@ import { useLocation } from 'react-router';
 import { AuthContext } from '../Contexts/AuthContext';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Payment = () => {
     const {user}=use(AuthContext)
 
-    console.log(user?.email);
     const {
     data: userdata,
     isLoading,
@@ -21,9 +21,12 @@ const Payment = () => {
       )
       return data
     },
+    initialData:[]
   })
-  
-  console.log(userdata);
+//   if(isLoading){
+//     return <span className="loading loading-bars loading-sm"></span>
+//   } 
+
   const { name, _id,  image } = userdata || {}
   
   
@@ -36,12 +39,14 @@ const Payment = () => {
     const scholarshipCategory=scholarship?.scholarship_category?.Scholarship_category
     const scholarship_id=scholarship?.scholarship_id?._id
     const subjectCategory=scholarship?.subject_category?.Subject_Category
+    
     const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Application Data:", data);
-    // You can send data to backend here
-    const submissionData = {
+  const onSubmit =async (data) => {
+    
+        const status="pending"
+      const submissionData = {
+        applicationStatus: status,
         address:data.address,
       photo: data.photo,
       degree:data.degree,
@@ -56,7 +61,22 @@ const Payment = () => {
       scholarshipId: scholarship_id,
       date: new Date().toISOString(), // current date/time in ISO format
     };
-    console.log(submissionData);
+
+       await axios.post(
+        `${import.meta.env.VITE_API_URL}/add-application`,submissionData).then(res=>{console.log(res.data);
+                    if(res.data.insertedId){
+                        Swal.fire({
+                                title: "Data added successfully!",
+                                icon: "success",
+                                draggable: true
+                });
+                    }
+                }).catch(error=>{
+                    console.log(error);
+                })
+    
+      
+
     reset();
   };
 
