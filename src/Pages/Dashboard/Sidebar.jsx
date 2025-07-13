@@ -17,7 +17,7 @@ const Sidebar = () => {
   
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-    <ul className="menu bg-green-200 text-base-content min-h-full w-80 p-4">
+    <ul className="menu bg-green-200 text-base-content min-h-full w-50 p-4">
       {/* Sidebar content here */}
        <li><Link to={'/'}>Home</Link></li>
       {user && <><li><Link to={'myprofile'}>My Profile: {role} </Link></li></>}
@@ -31,7 +31,7 @@ const Sidebar = () => {
       {role=='moderator' && <><li><Link to={'addscholarship'}>Add Scholarship </Link></li></>}
       {role=='moderator' && <><li><Link to={'managescholarship'}>Manage Scholarship </Link></li></>}
       {role=='moderator' && <><li><Link to={'manageappliedapplication'}>Manage Applied Application  </Link></li></>}
-      {role=='moderator' && <><li><Link to={'managereview'}>Manage Review </Link></li></>}
+      {role=='moderator' && <><li><Link to={'managereview'}>All Reviews </Link></li></>}
     </ul>
   </div>
 </div>
