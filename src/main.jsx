@@ -20,6 +20,7 @@ import Payment from './Pages/Payment.jsx';
 import Userprofile from './Pages/Dashboard/Userprofile.jsx';
 import DashboardLayout from './Layouts/DashboardLayout.jsx';
 import Stats from './Components/Stats.jsx';
+import ManageUsers from './Pages/Dashboard/Admin/ManageUsers.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -75,6 +76,12 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/myprofile',
         Component: Userprofile
+      },
+      {
+        path: '/dashboard/manageusers',
+        element: <PrivateRoutes>
+          <ManageUsers></ManageUsers>
+        </PrivateRoutes>
       }
     ]
   }

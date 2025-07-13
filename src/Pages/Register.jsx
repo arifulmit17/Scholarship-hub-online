@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { auth } from '../Firebase/Firebase.init';
 import { AuthContext } from '../Contexts/AuthContext';
 import axios from 'axios';
+import { saveUserInDb } from '../api/Utils';
 
 const Register = () => {
     const navigate=useNavigate();
@@ -38,7 +39,12 @@ const Register = () => {
         formData.entries()
         )
         const { email, password, name, photo }=userData
-        
+        const userData_db={
+                        name: name,
+                        email: email,
+                        image: photo
+                    }
+        saveUserInDb(userData_db)
         Swal.fire({
             title: "Registration successful",
             icon: "success",
