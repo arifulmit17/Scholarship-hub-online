@@ -26,6 +26,7 @@ import AddScholarship from './Pages/Dashboard/AddScholarship.jsx';
 import MyApplications from './Pages/Dashboard/User/MyApplications.jsx';
 import ApplicationDetails from './Pages/Dashboard/User/ApplicationDetails.jsx';
 import ManageApplications from './Pages/Dashboard/ManageApplications.jsx';
+import MyReviews from './Pages/Dashboard/User/MyReviews.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -86,6 +87,12 @@ const router = createBrowserRouter([
         path: '/dashboard/myapplication',
         element: <PrivateRoutes>
           <MyApplications></MyApplications>
+        </PrivateRoutes>
+      },
+      {
+        path: '/dashboard/myreviews',
+        element: <PrivateRoutes>
+          <MyReviews></MyReviews>
         </PrivateRoutes>
       },
       {

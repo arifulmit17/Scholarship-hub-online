@@ -1,12 +1,19 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import React from 'react';
+import React, { use, useState } from 'react';
 import { NavLink } from 'react-router';
+import ReviewModal from '../../../Modals/ReviewModal';
+import { AuthContext } from '../../../Contexts/AuthContext';
+import Swal from 'sweetalert2';
 
 const MyApplicationRow = ({app}) => {
-    console.log(app);
+    const {user}=use(AuthContext)
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    
+    
     const {scholarshipId,degree,applicationStatus}=app
-    console.log(scholarshipId);
+
 
     const {data,isLoading,refetch}=useQuery({
         queryKey:['scholarship',scholarshipId],
@@ -17,18 +24,65 @@ const MyApplicationRow = ({app}) => {
         initialData:[]
         
     })
-    console.log(data);
-    const {University_Name,University_location,Subject_category,Application_Fees,Service_Charge}=data || {}
+
+    const {universityName,universityCity,scholarshipName,subjectCategory,applicationFees,serviceCharge}=data || {}
+    const handleAddReview =async (reviewData) => {
+    const fullReview = {
+      ...reviewData,
+      scholarshipId,
+      scholarshipName:scholarshipName,
+      universityName:universityName,
+      userName:user.displayName,
+      userEmail:user.email
+    };
+
+
+    await axios.post(
+            `${import.meta.env.VITE_API_URL}/add-review`,fullReview).then(res=>{console.log(res.data);
+                        if(res.data.insertedId){
+                            Swal.fire({
+                                    title: "Review added successfully!",
+                                    icon: "success",
+                                    draggable: true
+                    });
+                        }
+                    }).catch(error=>{
+                        console.log(error);
+                    })
+    
+      };
+
+    // Submit to your backend here
+    // await axios.post('/api/reviews', fullReview);
+    
+      const handleEdit = () => {
+    if (applicationStatus === 'pending') {
+      // ✅ Allow editing (navigate or open modal)
+      console.log('Navigating to edit page...');
+      // Example: navigate(`/edit-application/${application._id}`);
+    } else {
+      
+      Swal.fire({
+        icon: 'warning',
+        title: 'Cannot Edit',
+        text: 'The application is past pending stage. Editing is not allowed.',
+        confirmButtonColor: '#3085d6',
+      });
+    }
+  };
+    
+    
+    
     return (
         <>
             <tr>
-        <td>{University_Name}</td>
-        {/* <td>{University_location}</td> */}
+        <td>{universityName}</td>
+        <td>{universityCity}</td>
         {/* <td>{Application_Feedback}</td> */}
-        <td>{Subject_category}</td>
+        <td>{subjectCategory}</td>
         <td>{degree}</td>
-        <td>{Application_Fees}</td>
-        <td>{Service_Charge}</td>
+        <td>{applicationFees}</td>
+        <td>{serviceCharge}</td>
         <td>{applicationStatus}</td>
 
     
@@ -37,14 +91,20 @@ const MyApplicationRow = ({app}) => {
             <NavLink to={`/dashboard/applicationdetails/${scholarshipId}`}>
 <button className="btn btn-xs">Details</button>
         </NavLink>
-            <button  className="btn  btn-xs">Edit</button>
+            <button onClick={handleEdit} className="btn  btn-xs">Edit</button>
             <button  className="btn  btn-xs">Cancel</button>
-            <button  className="btn  btn-xs">Add Review</button>
+            <button onClick={() => setIsModalOpen(true)} className="btn  btn-xs">Add Review</button>
         
             
           
         </th>
       </tr>
+      <ReviewModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSubmitReview={handleAddReview}
+      />
+      
         </>
     );
 };

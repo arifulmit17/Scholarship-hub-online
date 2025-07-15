@@ -15,7 +15,6 @@ const MyApplications = () => {
         initialData:[]
         
     })
-   console.log(data);
     return (
         <div>
             <table className="table">
