@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router';
 
 const SchoarshipCard = ({scholarship}) => {
-    console.log(scholarship);
   const  {_id,universityName,
     scholarshipName,
 imgUrl,
