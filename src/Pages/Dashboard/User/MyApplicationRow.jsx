@@ -38,7 +38,7 @@ const MyApplicationRow = ({app}) => {
 <button className="btn btn-xs">Details</button>
         </NavLink>
             <button  className="btn  btn-xs">Edit</button>
-            <button  className="btn  btn-xs">Delete</button>
+            <button  className="btn  btn-xs">Cancel</button>
             <button  className="btn  btn-xs">Add Review</button>
         
             

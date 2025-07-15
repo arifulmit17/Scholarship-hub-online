@@ -13,7 +13,7 @@ const ManageApplications = () => {
         initialData:[]
         
     })
-   console.log(data);
+
 
     return (
         <div>

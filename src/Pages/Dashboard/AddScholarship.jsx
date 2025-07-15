@@ -12,13 +12,43 @@ const AddScholarship = () => {
 
     // Here you'd upload image to imgbb and get the URL, then submit everything to your backend
     // Example: const imgUrl = await uploadToImgBB(data.universityImage[0]);
+
+    const imageFile = data.universityImage[0];
+
+  console.log('Image File:', imageFile);
+
+  // Example: uploading to ImgBB or Cloudinary
+  const formData = new FormData();
+  formData.append('image', imageFile);
+
+  // If you're using imgbb
+  
+  const res = await fetch(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_API_KEY}`, {
+    method: 'POST',
+    body: formData,
+  });
+
+  const result = await res.json();
+  const imgUrl = result.data.display_url;
+
+  const fulldata={
+    ...data,
+    imgUrl,
+    applicationFees:parseInt(data.applicationFees),
+    serviceCharge:parseInt(data.serviceCharge),
+    userName: user.displayName,
+    userEmail: user.email,
+    submittedAt: new Date().toISOString(),
+  }
+  console.log(fulldata);
   };
 
   const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setImagePreview(URL.createObjectURL(file));
+    const image = e.target.files[0];
+    if (image) {
+      setImagePreview(URL.createObjectURL(image));
     }
+
   };
 
   return (
@@ -61,8 +91,8 @@ const AddScholarship = () => {
         </select>
 
         <input {...register("tuitionFees")} type="text" placeholder="Tuition Fees (Optional)" className="input input-bordered w-full" />
-        <input {...register("applicationFees", { required: true })} type="text" placeholder="Application Fees" className="input input-bordered w-full" />
-        <input {...register("serviceCharge", { required: true })} type="text" placeholder="Service Charge" className="input input-bordered w-full" />
+        <input {...register("applicationFees", { required: true })} type="number" placeholder="Application Fees" className="input input-bordered w-full" />
+        <input {...register("serviceCharge", { required: true })} type="number" placeholder="Service Charge" className="input input-bordered w-full" />
         <input {...register("applicationDeadline", { required: true })} type="date" placeholder="Application Deadline" className="input input-bordered w-full" />
         <input {...register("postDate", { required: true })} type="date" placeholder="Post Date" className="input input-bordered w-full" />
         <input {...register("postedByEmail", { required: true })} type="email" defaultValue={user?.email} placeholder="Posted User Email" className="input input-bordered w-full" />
