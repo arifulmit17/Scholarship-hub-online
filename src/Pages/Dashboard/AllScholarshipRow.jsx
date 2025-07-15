@@ -6,17 +6,17 @@ const AllScholarshipRow = ({scholarship}) => {
     return (
         <>
             <tr>
-        <td>{scholarship?.name}</td>
-        <td>{scholarship?.University_Name}</td>
-        <td>{scholarship?.Subject_category}</td>
+        <td>{scholarship?.scholarshipName}</td>
+        <td>{scholarship?.universityName}</td>
+        <td>{scholarship?.subjectCategory}</td>
         <td>{scholarship?.degree}</td>
-        <td>{scholarship?.Application_Fees}</td>
+        <td>{scholarship?.applicationFees}</td>
         
 
     
         
         <th>
-            <NavLink to={`/dashboard/applicationdetails/${scholarship?._id}`}>
+            <NavLink to={`/scholarshipdetails/${scholarship?._id}`}>
 <button className="btn btn-xs">Details</button>
         </NavLink>
             <button  className="btn  btn-xs">Edit</button>

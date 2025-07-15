@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { use, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddScholarship = () => {
     const {user}=use(AuthContext)
@@ -41,6 +43,20 @@ const AddScholarship = () => {
     submittedAt: new Date().toISOString(),
   }
   console.log(fulldata);
+
+  await axios.post(
+        `${import.meta.env.VITE_API_URL}/add-scholarship`,fulldata).then(res=>{console.log(res.data);
+                    if(res.data.insertedId){
+                        Swal.fire({
+                                title: "Scholarship added successfully!",
+                                icon: "success",
+                                draggable: true
+                });
+                    }
+                }).catch(error=>{
+                    console.log(error);
+                })
+
   };
 
   const handleImageChange = (e) => {

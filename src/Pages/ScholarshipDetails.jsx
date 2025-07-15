@@ -17,18 +17,19 @@ const ScholarshipDetails = () => {
         
     })
     console.log(data);
-    const  {_id,University_Name,
-University_Image,
-Scholarship_category,
-University_location,
-Application_Deadline,
-Subject_Category,
+    
+    const  {_id,universityName,
+universityImage,
+scholarshipCategory,
+universityCity,
+applicationDeadline,
+subjectCategory,
 Subject_name,
 Scholarship_Description,
 Stipend,
-Application_Fees,
-Service_Charge,
-Post_Date,
+applicationFees,
+serviceCharge,
+postDate,
 Rating
 } = data
 
@@ -36,25 +37,25 @@ Rating
         <div className="card bg-base-100 shadow-xl w-full max-w-md">
       <figure>
         <img
-          src={University_Image}
-          alt={University_Name}
+          src={universityImage}
+          alt={universityName}
           className="w-full h-48 object-cover"
         />
       </figure>
       <div className="card-body text-sm space-y-1">
-        <h2 className="card-title text-lg">{University_Name}</h2>
-        <p><strong>Location:</strong> {}</p>
+        <h2 className="card-title text-lg">{universityName}</h2>
+        <p><strong>Location:</strong> {universityCity}</p>
         <p><strong>Rating:</strong> ⭐ {Rating}</p>
-        <p><strong>Scholarship:</strong> {Scholarship_category}</p>
-        <p><strong>Subject:</strong> {Subject_name} ({Subject_Category})</p>
+        <p><strong>Scholarship:</strong> {scholarshipCategory}</p>
+        <p><strong>Subject:</strong> {Subject_name} ({subjectCategory})</p>
         <p><strong>Description:</strong> {Scholarship_Description}</p>
         <p><strong>Stipend:</strong> {Stipend}</p>
-        <p><strong>Application Deadline:</strong> {Application_Deadline}</p>
-        <p><strong>Application Fees:</strong> {Application_Fees}</p>
-        <p><strong>Service Charge:</strong> {Service_Charge}</p>
-        <p><strong>Post Date:</strong> {Post_Date}</p>
+        <p><strong>Application Deadline:</strong> {applicationDeadline}</p>
+        <p><strong>Application Fees:</strong> {applicationFees}</p>
+        <p><strong>Service Charge:</strong> {serviceCharge}</p>
+        <p><strong>Post Date:</strong> {postDate}</p>
         <div className="card-actions justify-end mt-3">
-            <NavLink to={'/payment'} state={{ scholarship: {scholarship_id:{_id}, name: {University_Name}, scholarship_category:{Scholarship_category},subject_category:{Subject_Category} } }}>
+            <NavLink to={'/payment'} state={{ scholarship: {scholarship_id:{_id}, name: {universityName}, scholarship_category:{scholarshipCategory},subject_category:{subjectCategory} } }}>
 <button  className="btn btn-primary btn-sm">Apply Scholarship</button>
             </NavLink>
           
