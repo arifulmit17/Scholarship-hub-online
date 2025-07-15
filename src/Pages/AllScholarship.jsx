@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React from 'react';
-import SchoarshipCard from '../Components/SchoarshipCard';
+import ScholarshipCard from '../Components/ScholarshipCard';
 
 const AllScholarship = () => {
     const {data,isLoading,refetch}=useQuery({
@@ -17,7 +17,7 @@ const AllScholarship = () => {
     return (
         <div >
             {
-                data.map(scholarship=><SchoarshipCard  scholarship={scholarship}></SchoarshipCard>)
+                data.map(scholarship=><ScholarshipCard  scholarship={scholarship}></ScholarshipCard>)
             }
         </div>
     );

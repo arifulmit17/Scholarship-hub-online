@@ -7,7 +7,6 @@ import useRole from '../../hooks/useRole';
 const Sidebar = () => {
   const {user}=use(AuthContext)
   const role=useRole()
-  console.log(role);
     return (
         <div className=" lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
