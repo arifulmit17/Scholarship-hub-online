@@ -23,7 +23,7 @@ const Home = () => {
     }
 
     // Then by createdAt or postDate (descending - newest first)
-    return new Date(b.createdAt) - new Date(a.createdAt);
+    return new Date(b.submittedAt) - new Date(a.submittedAt);
   })
   .slice(0, 6);
   

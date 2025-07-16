@@ -35,10 +35,10 @@ const Payment = () => {
    
     const scholarship = location.state?.scholarship;
     
-    const universityName=scholarship?.name?.University_Name
-    const scholarshipCategory=scholarship?.scholarship_category?.Scholarship_category
+    const universityName=scholarship?.name?.universityName
+    const scholarshipCategory=scholarship?.scholarship_category?.ScholarshipCategory
     const scholarship_id=scholarship?.scholarship_id?._id
-    const subjectCategory=scholarship?.subject_category?.Subject_Category
+    const subjectCategory=scholarship?.subject_category?.subjectCategory
     
     const { register, handleSubmit, reset } = useForm();
 
@@ -63,7 +63,7 @@ const Payment = () => {
     };
 
        await axios.post(
-        `${import.meta.env.VITE_API_URL}/add-application`,submissionData).then(res=>{console.log(res.data);
+        `${import.meta.env.VITE_API_URL}/add-application`,submissionData).then(res=>{
                     if(res.data.insertedId){
                         Swal.fire({
                                 title: "Data added successfully!",

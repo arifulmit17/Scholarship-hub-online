@@ -3,17 +3,17 @@ import axios from 'axios';
 import React from 'react';
 import Swal from 'sweetalert2';
 
-const MyReviewRow = ({rev}) => {
+const ManageReviewRow = ({rev}) => {
     const queryClient = useQueryClient();
 
-const deleteMutation = useMutation({
+const deleteTutorialMutation = useMutation({
   mutationFn: async (id) => {
     const res = await axios.delete(`${import.meta.env.VITE_API_URL}/deletereview/${id}`);
     return res.data;
   },
   onSuccess: (data) => {
     if (data.deletedCount) {
-      Swal.fire("Deleted!", "Review has been deleted.", "success");
+      Swal.fire("Deleted!", "Your file has been deleted.", "success");
       queryClient.invalidateQueries(['mytutorial']); // Refresh the list
     }
   },
@@ -33,11 +33,11 @@ const handleDelete = (id) => {
     confirmButtonText: "Yes, delete it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      deleteMutation.mutate(id);
+      deleteTutorialMutation.mutate(id);
     }
   });
 };
-    const {review,reviewDate,scholarshipId,_id}=rev || {}
+    const {reviewDate,userName,rating,review,scholarshipId,_id}=rev || {}
     const {data,isLoading,refetch}=useQuery({
         queryKey:['scholarship',scholarshipId],
         queryFn:async ()=>{
@@ -47,21 +47,25 @@ const handleDelete = (id) => {
         initialData:[]
         
     })
-    const {scholarshipName,universityName}=data
+    console.log(data);
+    const {universityName,subjectCategory}=data
     return (
         <>
             <tr>
-        <td>{scholarshipName}</td>
         <td>{universityName}</td>
-        <td>{review}</td>
+        <td>{subjectCategory}</td>
+        <td>{userName}</td>
         <td>{reviewDate}</td>
+        <td>{review}</td>
+        <td>{rating}</td>
+        
         <th>
-            <button  className="btn  btn-xs">Edit</button>
-            <button onClick={()=>handleDelete(_id)} className="btn  btn-xs">Cancel</button>
+           
+            <button onClick={()=>handleDelete(_id)}  className="btn  btn-xs">Delete</button>
         </th>
       </tr>
         </>
     );
 };
 
-export default MyReviewRow;
+export default ManageReviewRow;

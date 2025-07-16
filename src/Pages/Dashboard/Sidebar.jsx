@@ -18,7 +18,7 @@ const Sidebar = () => {
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
     <ul className="menu bg-green-200 text-base-content min-h-full w-50 p-4">
       {/* Sidebar content here */}
-       <li><Link to={'/'}>Profile</Link></li>
+       <li><Link to={'/'}>Home</Link></li>
       {role=='user' && <><li><Link to={'myapplication'}>My Applications </Link></li></>}
       {role=='user' && <><li><Link to={'myreviews'}>My Reviews </Link></li></>}
       {role=='admin' && <><li><Link to={'addscholarship'}>Add Scholarship </Link></li></>}

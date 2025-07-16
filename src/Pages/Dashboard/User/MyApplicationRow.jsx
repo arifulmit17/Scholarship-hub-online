@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { use, useState } from 'react';
 import { NavLink } from 'react-router';
@@ -12,7 +12,41 @@ const MyApplicationRow = ({app}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     
     
-    const {scholarshipId,degree,applicationStatus}=app
+    const {scholarshipId,degree,applicationStatus,_id}=app
+
+    const queryClient = useQueryClient();
+
+const deleteMutation = useMutation({
+  mutationFn: async (id) => {
+    const res = await axios.delete(`${import.meta.env.VITE_API_URL}/deleteapplication/${id}`);
+    return res.data;
+  },
+  onSuccess: (data) => {
+    if (data.deletedCount) {
+      Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      queryClient.invalidateQueries(['myapplication']); // Refresh the list
+    }
+  },
+  onError: () => {
+    Swal.fire("Error!", "Something went wrong.", "error");
+  },
+});
+
+const handleDelete = (id) => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      deleteMutation.mutate(id);
+    }
+  });
+};
 
 
     const {data,isLoading,refetch}=useQuery({
@@ -92,7 +126,7 @@ const MyApplicationRow = ({app}) => {
 <button className="btn btn-xs">Details</button>
         </NavLink>
             <button onClick={handleEdit} className="btn  btn-xs">Edit</button>
-            <button  className="btn  btn-xs">Cancel</button>
+            <button onClick={()=>handleDelete(_id)} className="btn  btn-xs">Cancel</button>
             <button onClick={() => setIsModalOpen(true)} className="btn  btn-xs">Add Review</button>
         
             
