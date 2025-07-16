@@ -75,14 +75,11 @@ const router = createBrowserRouter([
       {
         index:true,
         element: <PrivateRoutes>
-          <Stats></Stats>
+          <Userprofile></Userprofile>
         </PrivateRoutes>,
         
       },
-      {
-        path: '/dashboard/myprofile',
-        Component: Userprofile
-      },
+      
       {
         path: '/dashboard/myapplication',
         element: <PrivateRoutes>
