@@ -70,6 +70,7 @@ const handleDelete = (id) => {
       scholarshipName:scholarshipName,
       universityName:universityName,
       userName:user.displayName,
+      userImage:user.photoURL,
       userEmail:user.email
     };
 

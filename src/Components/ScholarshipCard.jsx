@@ -4,7 +4,7 @@ import { NavLink } from 'react-router';
 const SchoarshipCard = ({scholarship}) => {
   const  {_id,universityName,
     scholarshipName,
-imgUrl,
+universityImage,
 scholarshipCategory,
 universityCity,
 universityCountry,
@@ -16,7 +16,7 @@ Rating
     return (
         <div className="card w-full bg-base-100 shadow-xl">
       <figure>
-        <img src={imgUrl} alt={universityName} className="h-48 w-full object-cover" />
+        <img src={universityImage} alt={universityName} className="h-[400px] w-full object-cover" />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-xl font-semibold">{universityName}</h2>

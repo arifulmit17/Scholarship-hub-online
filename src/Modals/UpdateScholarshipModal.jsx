@@ -7,8 +7,9 @@ import Swal from 'sweetalert2';
 const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
   const { register, handleSubmit, setValue, reset, watch } = useForm();
   const [imagePreview, setImagePreview] = useState(null);
+  const [imageFile, setImageFile] = useState(null);
   const queryClient = useQueryClient();
-
+    
   // Prefill form when scholarship changes
   useEffect(() => {
     if (scholarship) {
@@ -19,13 +20,25 @@ const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      setImagePreview(URL.createObjectURL(file));
-    }
+  if (file) {
+    setImageFile(file); // store file for upload
+    setImagePreview(URL.createObjectURL(file));
+  }
   };
+  const uploadToImgBB = async (image) => {
+  const formData = new FormData();
+  formData.append('image', image);
+
+  const imgbbKey = import.meta.env.VITE_IMGBB_API_KEY; // Set this in your .env
+  const url = `https://api.imgbb.com/1/upload?key=${imgbbKey}`;
+
+  const res = await axios.post(url, formData);
+  return res.data?.data?.url;
+};
 
   const updateMutation = useMutation({
     mutationFn: async (updatedData) => {
+        console.log(updatedData);
       const { _id, ...rest } = updatedData;
       return await axios.put(`${import.meta.env.VITE_API_URL}/scholarshipupdate/${_id}`, rest);
     },
@@ -39,8 +52,21 @@ const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
     },
   });
 
-  const onSubmit = (data) => {
-    updateMutation.mutate({ ...data, _id: scholarship._id });
+  const onSubmit =async (data) => {
+    let updatedImageUrl = scholarship.universityImage;
+
+    // Upload only if a new image is selected
+    if (imageFile) {
+      updatedImageUrl = await uploadToImgBB(imageFile);
+    }
+
+    const updatedScholarship = {
+      ...data,
+      universityImage: updatedImageUrl,
+    };
+
+    updateMutation.mutate({ ...updatedScholarship, _id: scholarship._id });
+    // updateMutation.mutate({ ...data, _id: scholarship._id });
   };
 
   if (!isOpen) return null;

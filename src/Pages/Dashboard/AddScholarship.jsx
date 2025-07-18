@@ -31,11 +31,11 @@ const AddScholarship = () => {
   });
 
   const result = await res.json();
-  const imgUrl = result.data.display_url;
+  const universityImage = result.data.display_url;
 
   const fulldata={
     ...data,
-    imgUrl,
+    universityImage,
     applicationFees:parseInt(data.applicationFees),
     serviceCharge:parseInt(data.serviceCharge),
     userName: user.displayName,

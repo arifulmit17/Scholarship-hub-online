@@ -54,13 +54,13 @@ const Home = () => {
                 </div>
                 <div className='w-full lg:w-7/12 mx-5 mb-5'>
                     <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Member's Benefit</h1>
-                    <p className='text-base md:text-lg lg:text-xl '>Our site focuses on a platform for teaching enthusiasts for following benefits</p>
+                    <p className='text-base md:text-lg lg:text-xl '>Our site focuses on a platform for students for following benefits</p>
                     <ol className='h-1/2 mt-3 flex flex-col justify-between'>
-                      <li>1. Share tutorials, find tutors, ask questions any time to a tutor</li>
+                      <li>1. Find scholarship from a wide range of universities. </li>
 
-                      <li>2. Post or join tutorials on the site</li>
+                      <li>2. Apply easily to as many scholarships as you want</li>
 
-                      <li>3. Connect over shared interests in languages</li>
+                      <li>3. Give your valuable feedback on specific scholarship if needed</li>
                     </ol>
                     <NavLink to={'/register'}>
                      <button className='text-white ml-15 lg:ml-40 rounded-2xl btn btn-primary btn-wide'>Register Now</button>
