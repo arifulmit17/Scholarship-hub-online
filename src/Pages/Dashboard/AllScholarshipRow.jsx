@@ -1,10 +1,18 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router';
 import Swal from 'sweetalert2';
+import UpdateScholarshipModal from '../../Modals/UpdateScholarshipModal';
 
 const AllScholarshipRow = ({scholarship}) => {
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedScholarship, setSelectedScholarship] = useState(null);
+
+    const handleEdit = (scholarship) => {
+     setSelectedScholarship(scholarship);
+     setModalOpen(true);
+    };
     const queryClient = useQueryClient();
 
 const deleteMutation = useMutation({
@@ -52,13 +60,18 @@ const handleDelete = (id) => {
             <NavLink to={`/scholarshipdetails/${scholarship?._id}`}>
 <button className="btn btn-xs">Details</button>
         </NavLink>
-            <button  className="btn  btn-xs">Edit</button>
+            <button onClick={() => handleEdit(scholarship)} className="btn  btn-xs">Edit</button>
             <button onClick={()=>handleDelete(_id)} className="btn  btn-xs">Delete</button>
         
             
           
         </th>
       </tr>
+      <UpdateScholarshipModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        scholarship={selectedScholarship}
+        />
         </>
     );
 };

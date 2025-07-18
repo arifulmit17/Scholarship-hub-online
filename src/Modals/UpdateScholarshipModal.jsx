@@ -27,7 +27,7 @@ const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
   const updateMutation = useMutation({
     mutationFn: async (updatedData) => {
       const { _id, ...rest } = updatedData;
-      return await axios.put(`${import.meta.env.VITE_API_URL}/scholarship/${_id}`, rest);
+      return await axios.put(`${import.meta.env.VITE_API_URL}/scholarshipupdate/${_id}`, rest);
     },
     onSuccess: () => {
       queryClient.invalidateQueries(['scholarship']);
@@ -86,7 +86,7 @@ const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
           <input {...register("serviceCharge", { required: true })} type="number" placeholder="Service Charge" className="input input-bordered w-full" />
           <input {...register("applicationDeadline", { required: true })} type="date" className="input input-bordered w-full" />
           <input {...register("postDate", { required: true })} type="date" className="input input-bordered w-full" />
-          <input {...register("postedByEmail", { required: true })} type="email" placeholder="Posted User Email" className="input input-bordered w-full" />
+          
 
           <div className="md:col-span-2 flex justify-end gap-2 mt-4">
             <button type="button" onClick={onClose} className="btn btn-outline">Cancel</button>
