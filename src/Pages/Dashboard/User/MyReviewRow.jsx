@@ -1,9 +1,52 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import ReviewEditModal from '../../../Modals/ReviewEditModal';
 
-const MyReviewRow = ({rev}) => {
+const MyReviewRow = ({rev,user}) => {
+    const [editModalOpen, setEditModalOpen] = useState(false);
+    const [currentReview, setCurrentReview] = useState(null);
+
+    const handleEditClick = (review) => {
+  setCurrentReview(review);
+  setEditModalOpen(true);
+  
+};
+
+const updateReviewMutation = useMutation({
+  mutationFn: async (updatedReview) => {
+    const res = await axios.put(
+      `${import.meta.env.VITE_API_URL}/reviewupdate/${rev._id}`,
+      updatedReview
+    );
+    return res.data;
+  },
+  onSuccess: () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Review updated!',
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
+    // Invalidate any related queries to refresh data
+    queryClient.invalidateQueries({ queryKey: ['review', user?.email] }); // Change the key to match your app
+  },
+  onError: (error) => {
+    Swal.fire({
+      icon: 'error',
+      title: 'Update failed!',
+      text: error.message || 'Something went wrong.',
+    });
+  },
+});
+
+    const handleUpdateReview = async (updatedReview) => {
+        console.log(updatedReview);
+        updateReviewMutation.mutate(updatedReview);
+     refetch(); 
+    };
     const queryClient = useQueryClient();
 
 const deleteMutation = useMutation({
@@ -37,7 +80,7 @@ const handleDelete = (id) => {
     }
   });
 };
-    const {review,reviewDate,scholarshipId,_id}=rev || {}
+    const {review,reviewDate,scholarshipId,_id,rating}=rev || {}
     const {data,isLoading,refetch}=useQuery({
         queryKey:['scholarship',scholarshipId],
         queryFn:async ()=>{
@@ -55,11 +98,20 @@ const handleDelete = (id) => {
         <td>{universityName}</td>
         <td>{review}</td>
         <td>{reviewDate}</td>
+        <td>{rating}</td>
         <th>
-            <button  className="btn  btn-xs">Edit</button>
+            <button onClick={() => handleEditClick(review)} className="btn  btn-xs">Edit</button>
             <button onClick={()=>handleDelete(_id)} className="btn  btn-xs">Cancel</button>
         </th>
       </tr>
+      <ReviewEditModal
+      isOpen={editModalOpen}
+         onClose={() => setEditModalOpen(false)}
+        currentReview={currentReview}
+        onUpdate={handleUpdateReview}
+      >
+
+      </ReviewEditModal>
         </>
     );
 };

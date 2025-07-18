@@ -5,9 +5,12 @@ import { NavLink } from 'react-router';
 import ReviewModal from '../../../Modals/ReviewModal';
 import { AuthContext } from '../../../Contexts/AuthContext';
 import Swal from 'sweetalert2';
+import UpdateApplicationModal from '../../../Modals/UpdateApplicationModal';
 
 const MyApplicationRow = ({app}) => {
     const {user}=use(AuthContext)
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedApp, setSelectedApp] = useState(null);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     
@@ -59,7 +62,7 @@ const handleDelete = (id) => {
         
     })
 
-    const {universityName,universityCity,scholarshipName,subjectCategory,applicationFees,serviceCharge}=data || {}
+    const {universityName,universityCity,scholarshipName,scholarshipCategory,subjectCategory,applicationFees,serviceCharge}=data || {}
     const handleAddReview =async (reviewData) => {
     const fullReview = {
       ...reviewData,
@@ -91,9 +94,8 @@ const handleDelete = (id) => {
     
       const handleEdit = () => {
     if (applicationStatus === 'pending') {
-      // ✅ Allow editing (navigate or open modal)
-      console.log('Navigating to edit page...');
-      // Example: navigate(`/edit-application/${application._id}`);
+      setSelectedApp(app);
+        setModalOpen(true);
     } else {
       
       Swal.fire({
@@ -138,7 +140,16 @@ const handleDelete = (id) => {
         onClose={() => setIsModalOpen(false)}
         onSubmitReview={handleAddReview}
       />
-      
+      {modalOpen && (
+        <UpdateApplicationModal
+         isOpen={modalOpen}
+         onClose={() => setModalOpen(false)}
+        application={selectedApp}
+        universityName={universityName}
+        subjectCategory={subjectCategory}
+        scholarshipCategory={scholarshipCategory}
+         />
+)}
         </>
     );
 };

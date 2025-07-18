@@ -80,6 +80,12 @@ const router = createBrowserRouter([
         </PrivateRoutes>,
         
       },
+      {
+        path: '/dashboard/myprofile',
+        element: <PrivateRoutes>
+          <Userprofile></Userprofile>
+        </PrivateRoutes>
+      },
       
       {
         path: '/dashboard/myapplication',

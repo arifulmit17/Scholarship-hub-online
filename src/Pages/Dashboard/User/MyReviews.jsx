@@ -26,12 +26,13 @@ const MyReviews = () => {
         <th>University Name</th>
         <th>Review Comment</th>
         <th>Review Date</th>
+        <th>Rating</th>
       </tr>
     </thead>
     <tbody>
         {/* row */}
       {
-        data.map(rev=><MyReviewRow key={rev._id} rev={rev}></MyReviewRow>)
+        data.map(rev=><MyReviewRow key={rev._id} rev={rev} user={user}></MyReviewRow>)
       }
     </tbody>
     
