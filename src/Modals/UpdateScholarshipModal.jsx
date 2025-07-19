@@ -107,7 +107,7 @@ const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
             <option>Masters</option>
           </select>
 
-          <input {...register("tuitionFees")} type="text" placeholder="Tuition Fees (Optional)" className="input input-bordered w-full" />
+          <input {...register("description")} type="text" placeholder="Description" className="input input-bordered w-full" />
           <input {...register("applicationFees", { required: true })} type="number" placeholder="Application Fees" className="input input-bordered w-full" />
           <input {...register("serviceCharge", { required: true })} type="number" placeholder="Service Charge" className="input input-bordered w-full" />
           <input {...register("applicationDeadline", { required: true })} type="date" className="input input-bordered w-full" />

@@ -66,7 +66,7 @@ Rating
         <p><strong>Service Charge:</strong> {serviceCharge}</p>
         <p><strong>Post Date:</strong> {postDate}</p>
         <div className="card-actions justify-end mt-3">
-            <NavLink to={'/payment'} state={{ scholarship: {scholarship_id:{_id}, name: {universityName}, scholarship_category:{scholarshipCategory},subject_category:{subjectCategory} } }}>
+            <NavLink to={'/payment'} state={{ scholarship: {scholarship_id:{_id}, name: {universityName}, scholarship_category:{scholarshipCategory},subject_category:{subjectCategory},applicationDeadline:{applicationDeadline} } }}>
 <button  className="btn btn-primary btn-sm">Apply Scholarship</button>
             </NavLink>
           

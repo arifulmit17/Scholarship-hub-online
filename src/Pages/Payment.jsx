@@ -39,6 +39,7 @@ const Payment = () => {
     const scholarshipCategory=scholarship?.scholarship_category?.ScholarshipCategory
     const scholarship_id=scholarship?.scholarship_id?._id
     const subjectCategory=scholarship?.subject_category?.subjectCategory
+    const appapplicationDeadline=scholarship?.applicationDeadline?.applicationDeadline
     
     const { register, handleSubmit, reset } = useForm();
 
@@ -47,6 +48,7 @@ const Payment = () => {
         const status="pending"
       const submissionData = {
         applicationStatus: status,
+        appapplicationDeadline:appapplicationDeadline,
         address:data.address,
       photo: data.photo,
       degree:data.degree,

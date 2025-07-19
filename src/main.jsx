@@ -28,6 +28,7 @@ import ApplicationDetails from './Pages/Dashboard/User/ApplicationDetails.jsx';
 import ManageApplications from './Pages/Dashboard/ManageApplications.jsx';
 import MyReviews from './Pages/Dashboard/User/MyReviews.jsx';
 import ManageReview from './Pages/Dashboard/Moderator/ManageReview.jsx';
+import Chart from './Pages/Dashboard/Admin/Chart.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -122,6 +123,12 @@ const router = createBrowserRouter([
         path: '/dashboard/manageusers',
         element: <PrivateRoutes>
           <ManageUsers></ManageUsers>
+        </PrivateRoutes>
+      },
+      {
+        path: '/dashboard/chart',
+        element: <PrivateRoutes>
+          <Chart></Chart>
         </PrivateRoutes>
       },
       {
