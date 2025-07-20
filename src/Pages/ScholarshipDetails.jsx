@@ -35,7 +35,7 @@ universityCity,
 applicationDeadline,
 subjectCategory,
 Subject_name,
-Scholarship_Description,
+description,
 Stipend,
 applicationFees,
 serviceCharge,
@@ -60,7 +60,7 @@ Rating
         <p><strong>Rating:</strong> ⭐ {Rating}</p>
         <p><strong>Scholarship:</strong> {scholarshipCategory}</p>
         <p><strong>Subject:</strong> {Subject_name} ({subjectCategory})</p>
-        <p><strong>Description:</strong> {Scholarship_Description}</p>
+        <p><strong>Description:</strong> {description}</p>
         <p><strong>Application Deadline:</strong> {applicationDeadline}</p>
         <p><strong>Application Fees:</strong> {applicationFees}</p>
         <p><strong>Service Charge:</strong> {serviceCharge}</p>

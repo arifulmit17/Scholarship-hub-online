@@ -52,6 +52,7 @@ const ManageApplications = () => {
       <tr className='dark:text-white'>
         <th>Applicant Name</th>
         <th>Application status</th>
+        <th>Application status change</th>
         <th>Degree</th>
         <th>Hsc Result</th>
         <th>Ssc Result</th>

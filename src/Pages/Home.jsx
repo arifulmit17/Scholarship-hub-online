@@ -14,7 +14,6 @@ const Home = () => {
     },
     initialData: [],
   });
-  console.log(data);
   const topScholarships = [...data]
   .sort((a, b) => {
     // First by application fees (ascending)

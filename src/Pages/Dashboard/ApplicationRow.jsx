@@ -32,6 +32,10 @@ const ApplicationRow = ({app}) => {
         const changedStatus="rejected"
         mutation.mutate(changedStatus)
     }
+    const handleStatusChange = (e) => {
+    const selectedStatus = e.target.value;
+    mutation.mutate(selectedStatus);
+  };
 
     
     
@@ -41,6 +45,17 @@ const ApplicationRow = ({app}) => {
     <tr>
         <td>{userName}</td>
         <td>{applicationStatus}</td>
+        <td>
+          <select
+            className="select select-bordered select-sm"
+            value={applicationStatus}
+            onChange={handleStatusChange}
+          >
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+          </select>
+        </td>
         <td>{degree}</td>
         <td>{hscResult}</td>
         <td>{sscResult}</td>

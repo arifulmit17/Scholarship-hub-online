@@ -7,7 +7,6 @@ import axios from 'axios';
 const ApplicationDetails = () => {
     const {user}=use(AuthContext)
         const param=useParams()
-        console.log(user,param);
         const {data,isLoading,refetch}=useQuery({
         queryKey:['scholarship',param.id],
         queryFn:async ()=>{
@@ -17,19 +16,18 @@ const ApplicationDetails = () => {
         initialData:[]
         
     })
-    console.log(data);
     
 
 
     const  {_id,universityName,
-imgUrl,
+        scholarshipName,
+universityImage,
 subjectCategory,
 universityCity,
 applicationDeadline,
 scholarshipCategory,
 Subject_name,
-Scholarship_Description,
-Stipend,
+description,
 applicationFees,
 serviceCharge,
 postDate,
@@ -40,19 +38,18 @@ Rating
         <div className="card bg-base-100 shadow-xl w-full max-w-md">
       <figure>
         <img
-          src={imgUrl}
+          src={universityImage}
           alt={universityName}
           className="w-full h-48 object-cover"
         />
       </figure>
       <div className="card-body text-sm space-y-1">
-        <h2 className="card-title text-lg">{universityName}</h2>
+        <h2 className="card-title text-lg">{scholarshipName}</h2>
+        <p><strong>University:</strong> {universityName}</p>
         <p><strong>Location:</strong> {universityCity}</p>
-        <p><strong>Rating:</strong> ⭐ {Rating}</p>
         <p><strong>Scholarship:</strong> {scholarshipCategory}</p>
         <p><strong>Subject:</strong> {subjectCategory}</p>
-        <p><strong>Description:</strong> {Scholarship_Description}</p>
-        <p><strong>Stipend:</strong> {Stipend}</p>
+        <p><strong>Description:</strong> {description}</p>
         <p><strong>Application Deadline:</strong> {applicationDeadline}</p>
         <p><strong>Application Fees:</strong> {applicationFees}</p>
         <p><strong>Service Charge:</strong> {serviceCharge}</p>

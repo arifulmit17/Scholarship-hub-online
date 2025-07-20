@@ -106,7 +106,7 @@ const AddScholarship = () => {
           <option>Masters</option>
         </select>
 
-        <input {...register("tuitionFees")} type="text" placeholder="Tuition Fees (Optional)" className="input input-bordered w-full" />
+        <input {...register("Description")} type="text" placeholder="Description" className="input input-bordered w-full" />
         <input {...register("applicationFees", { required: true })} type="number" placeholder="Application Fees" className="input input-bordered w-full" />
         <input {...register("serviceCharge", { required: true })} type="number" placeholder="Service Charge" className="input input-bordered w-full" />
         <input {...register("applicationDeadline", { required: true })} type="date" placeholder="Application Deadline" className="input input-bordered w-full" />

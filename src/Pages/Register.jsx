@@ -19,6 +19,12 @@ const Register = () => {
       console.log('signed in');
       signInWithPopup(auth,provider).then(result=>{
         console.log(result);
+        const userData={
+                        name: result?.user?.displayName,
+                        email: result?.user?.email,
+                        image: result?.user?.photoURL
+                    }
+                    saveUserInDb(userData)
         Swal.fire({
             title: "Sign in successful",
             icon: "success",
@@ -51,34 +57,34 @@ const Register = () => {
             draggable: true
         });
         
-        createUser(email,password)
-         .then(result=>{
-             console.log(result)
-             axios.post(`${import.meta.env.VITE_API_URL}/users`,userData).then(res=>{console.log(res.data)
-                if(res.data.insertedId){
-                                Swal.fire({
-                                        title: "Data added to users collection successfully!",
-                                        icon: "success",
-                                        draggable: true
-                        });
-                        }
-        }).catch(error=>{
-            console.log(error);
-        })
-            updateUser({displayName: name, photoURL : photo}).then(()=>{
-              setUser({...user,displayName: name, photoURL : photo})
-            }).catch(error=>{
-              console.log(error);
-              setUser(user)
-            })
+        // createUser(email,password)
+        //  .then(result=>{
+        //      console.log(result)
+        //      axios.post(`${import.meta.env.VITE_API_URL}/users`,userData).then(res=>{console.log(res.data)
+        //         if(res.data.insertedId){
+        //                         Swal.fire({
+        //                                 title: "Data added to users collection successfully!",
+        //                                 icon: "success",
+        //                                 draggable: true
+        //                 });
+        //                 }
+        // }).catch(error=>{
+        //     console.log(error);
+        // })
+        //     updateUser({displayName: name, photoURL : photo}).then(()=>{
+        //       setUser({...user,displayName: name, photoURL : photo})
+        //     }).catch(error=>{
+        //       console.log(error);
+        //       setUser(user)
+        //     })
 
-            navigate('/')
+        //     navigate('/')
 
-          }
+        //   }
             
-          ).catch(error=>{
-            console.log(error);
-          })
+        //   ).catch(error=>{
+        //     console.log(error);
+        //   })
     }
     return (
         <div className='max-w-sm rounded-2xl mx-auto'>

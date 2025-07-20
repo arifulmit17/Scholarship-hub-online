@@ -16,6 +16,12 @@ const Login = () => {
 		
 			  signInWithPopup(auth,provider).then(result=>{
 				console.log(result);
+				const userData={
+                name: result?.user?.displayName,
+                email: result?.user?.email,
+                image: result?.user?.photoURL
+            }
+            saveUserInDb(userData)
 				Swal.fire({
 			position: "top-end",
 			icon: "success",
@@ -42,12 +48,12 @@ const Login = () => {
 		LoginUser(email,password).then((data)=>{
             const result=data
             console.log(result);
-            // const userData={
-            //     name: result?.user?.displayName,
-            //     email: result?.user?.email,
-            //     image: result?.user?.photoURL
-            // }
-            // saveUserInDb(userData)
+            const userData={
+                name: result?.user?.displayName,
+                email: result?.user?.email,
+                image: result?.user?.photoURL
+            }
+            saveUserInDb(userData)
 			Swal.fire({
 			position: "top-end",
 			icon: "success",

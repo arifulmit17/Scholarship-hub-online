@@ -6,7 +6,7 @@ import SchoarshipCard from '../Components/ScholarshipCard';
 const AllScholarship = () => {
   const [searchText, setSearchText] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 1;
+  const itemsPerPage = 2;
 
   const { data = [], isLoading } = useQuery({
     queryKey: ['scholarship'],
