@@ -49,7 +49,7 @@ const Home = () => {
                 <h1 className='font-bold text-5xl text-center my-10'>Members Only</h1>
                 <div  className='w-11/12 mx-auto lg:flex'>
                 <div className='w-5/12  '>
-                    <img className='md:w-[300px] ml-30 rounded-2xl' src="https://i.postimg.cc/zGLdcxJV/member.png" alt="" />
+                    <img className='md:w-[300px] ml-30 rounded-2xl' src="https://i.postimg.cc/0Qzm235s/member.png" alt="" />
                 </div>
                 <div className='w-full lg:w-7/12 mx-5 mb-5'>
                     <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Member's Benefit</h1>

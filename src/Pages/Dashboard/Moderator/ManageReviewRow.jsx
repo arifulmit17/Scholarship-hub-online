@@ -47,7 +47,6 @@ const handleDelete = (id) => {
         initialData:[]
         
     })
-    console.log(data);
     const {universityName,subjectCategory}=data
     return (
         <>

@@ -1,6 +1,7 @@
 import { useQueryClient, useMutation} from '@tanstack/react-query';
 import axios from 'axios';
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const UserRow = ({user}) => {
   const queryClient = useQueryClient()
@@ -29,6 +30,37 @@ const UserRow = ({user}) => {
       mutation.mutate(changedRole)
 
     }
+    const deleteMutation = useMutation({
+  mutationFn: async (id) => {
+    const res = await axios.delete(`${import.meta.env.VITE_API_URL}/deleteuser/${id}`);
+    return res.data;
+  },
+  onSuccess: (data) => {
+    if (data.deletedCount) {
+      Swal.fire("Deleted!", "user has been deleted.", "success");
+      queryClient.invalidateQueries(['users']); // Refresh the list
+    }
+  },
+  onError: () => {
+    Swal.fire("Error!", "Something went wrong.", "error");
+  },
+});
+    const handleDelete = (id) => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          deleteMutation.mutate(id);
+        }
+      });
+    };
+    
     return (
         
             <>
@@ -56,7 +88,7 @@ const UserRow = ({user}) => {
           </select></td>
         
         <th>
-            <button  className="btn text-white bg-green-600 btn-xs">Delete</button>
+            <button onClick={()=>handleDelete(user._id)} className="btn text-white bg-green-600 btn-xs">Delete</button>
         
             
           

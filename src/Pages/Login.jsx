@@ -47,7 +47,6 @@ const Login = () => {
 		const password=e.target.password.value;
 		LoginUser(email,password).then((data)=>{
             const result=data
-            console.log(result);
             const userData={
                 name: result?.user?.displayName,
                 email: result?.user?.email,

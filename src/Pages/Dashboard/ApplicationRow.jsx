@@ -17,7 +17,6 @@ const ApplicationRow = ({app}) => {
       return data
     },
     onSuccess: data => {
-      console.log(data)
       // refetch()
       // invalidate query
       queryClient.invalidateQueries(['users'])
@@ -27,8 +26,7 @@ const ApplicationRow = ({app}) => {
     },
   })
 
-    const handleStatus=(id)=>{
-        console.log(id);
+    const handleStatus=()=>{
         const changedStatus="rejected"
         mutation.mutate(changedStatus)
     }
@@ -66,7 +64,7 @@ const ApplicationRow = ({app}) => {
 <button className="btn btn-xs">Details</button>
         </NavLink>
             <button onClick={() => setIsOpen(true)} className="btn  btn-xs">Feedback</button>
-            <button onClick={()=>handleStatus(_id)} className="btn  btn-xs">Cancel</button>
+            <button onClick={()=>handleStatus()} className="btn  btn-xs">Cancel</button>
          
         </th>
       

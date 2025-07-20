@@ -13,7 +13,6 @@ const ManageReview = () => {
             initialData:[]
             
         })
-        console.log(data);
 
 
     return (
