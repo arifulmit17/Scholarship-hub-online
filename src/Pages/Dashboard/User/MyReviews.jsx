@@ -6,10 +6,15 @@ import MyReviewRow from './MyReviewRow';
 
 const MyReviews = () => {
     const {user}=use(AuthContext)
+    const token=localStorage.getItem('token')
         const {data,isLoading,refetch}=useQuery({
             queryKey:['review',user?.email],
             queryFn:async ()=>{
-                const {data}=await axios(`${import.meta.env.VITE_API_URL}/review/${user?.email}`)
+                const {data}=await axios(`${import.meta.env.VITE_API_URL}/review/${user?.email}`,
+                    {headers:{
+                    Authorization: `Bearer ${token}`
+                }}
+                )
                 return data
             },
             initialData:[]

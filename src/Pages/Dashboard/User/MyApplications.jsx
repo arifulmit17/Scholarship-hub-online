@@ -6,10 +6,15 @@ import MyApplicationRow from './MyApplicationRow';
 
 const MyApplications = () => {
     const {user}=use(AuthContext)
+    const token=localStorage.getItem('token')
     const {data,isLoading,refetch}=useQuery({
         queryKey:['application',user?.email],
         queryFn:async ()=>{
-            const {data}=await axios(`${import.meta.env.VITE_API_URL}/application/${user?.email}`)
+            const {data}=await axios(`${import.meta.env.VITE_API_URL}/application/${user?.email}`,
+                {headers:{
+                    Authorization: `Bearer ${token}`
+                }}
+            )
             return data
         },
         initialData:[]

@@ -29,6 +29,7 @@ const Login = () => {
 			showConfirmButton: false,
 			timer: 1500
 			});
+			navigate('/')
 				
 			  }).catch(error=>{
 				console.log(error);
@@ -39,6 +40,7 @@ const Login = () => {
 				footer: '<a href="#">Why do I have this issue?</a>'
 				});
 			  })
+			  
 	}
 	
 	const handleLogin=async e=>{

@@ -19,6 +19,7 @@ const Register = () => {
       console.log('signed in');
       signInWithPopup(auth,provider).then(result=>{
         console.log(result);
+        
         const userData={
                         name: result?.user?.displayName,
                         email: result?.user?.email,
@@ -30,6 +31,7 @@ const Register = () => {
             icon: "success",
             draggable: true
 });
+navigate('/')
         
       }).catch(error=>{
         console.log(error);
