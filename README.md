@@ -1,11 +1,11 @@
 Project Name: Scholarship Hub
 
-Generated Live Site URL: 
+Generated Live Site URL: https://scholarship-hub.netlify.app/
 
-Guidance: Browse to the live site link and follow the f.a.q section in home page. for server info go the server repo link provided below.
+Guidance: Browse to the live site link and follow the f.a.q section in home page. 
 
 
-Project description:Our site focuses on a platform for students for many benefits
+Project description:Our site focuses on a platform for students looking for suitable scholarships with many benefits. 
 
 
 Features:

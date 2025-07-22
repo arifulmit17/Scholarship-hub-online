@@ -5,8 +5,14 @@ import { AuthContext } from '../Contexts/AuthContext';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import CheckoutForm from '../Components/CheckoutForm';
+import { Button } from '@headlessui/react';
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PK_KEY);
 
 const Payment = () => {
+  
     const {user}=use(AuthContext)
 
     const {
@@ -39,7 +45,9 @@ const Payment = () => {
     const scholarshipCategory=scholarship?.scholarship_category?.ScholarshipCategory
     const scholarship_id=scholarship?.scholarship_id?._id
     const subjectCategory=scholarship?.subject_category?.subjectCategory
-    const appapplicationDeadline=scholarship?.applicationDeadline?.applicationDeadline
+    const applicationDeadline=scholarship?.applicationDeadline?.applicationDeadline
+    const applicationFees=scholarship?.applicationFees?.applicationFees
+    
     
     const { register, handleSubmit, reset } = useForm();
 
@@ -48,7 +56,7 @@ const Payment = () => {
         const status="pending"
       const submissionData = {
         applicationStatus: status,
-        appapplicationDeadline:appapplicationDeadline,
+        applicationDeadline:applicationDeadline,
         address:data.address,
       photo: data.photo,
       degree:data.degree,
@@ -66,7 +74,8 @@ const Payment = () => {
 
        await axios.post(
         `${import.meta.env.VITE_API_URL}/add-application`,submissionData).then(res=>{
-                    if(res.data.insertedId){
+           
+         if(res.data.insertedId){
                         Swal.fire({
                                 title: "Data added successfully!",
                                 icon: "success",
@@ -83,11 +92,17 @@ const Payment = () => {
   };
 
   return (
-    <form
+    <div>
+      <Elements stripe={stripePromise}>
+      <CheckoutForm applicationFees={applicationFees}/>
+    </Elements>
+        
+<form
       onSubmit={handleSubmit(onSubmit)}
       className="max-w-3xl mx-auto p-6 bg-base-100 rounded-xl shadow-md space-y-6"
     >
       <h2 className="text-2xl font-bold">Scholarship Application</h2>
+      
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
@@ -180,6 +195,11 @@ const Payment = () => {
 
       <button className="btn btn-primary w-full mt-4">Submit Application</button>
     </form>
+    
+
+    </div>
+    
+    
   );
 };
 

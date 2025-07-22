@@ -139,7 +139,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/dashboard/managescholarship',
-        Component: AllScholarshipDashboard
+        element: <PrivateRoutes>
+          <AllScholarshipDashboard></AllScholarshipDashboard>
+        </PrivateRoutes>
       }
     ]
   }
@@ -152,7 +154,5 @@ createRoot(document.getElementById('root')).render(
         <RouterProvider router={router} />
        </AuthProvider>
     </QueryClientProvider>
-    
-    
   </StrictMode>,
 )

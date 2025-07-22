@@ -1,5 +1,8 @@
+import { Elements } from '@stripe/react-stripe-js';
 import React from 'react';
 import { NavLink } from 'react-router';
+
+
 
 const SchoarshipCard = ({scholarship}) => {
   const  {_id,universityName,
@@ -35,6 +38,7 @@ Rating
 <button className="btn btn-primary">Details</button>
         </NavLink>
         </div>
+        
       </div>
     </div>
     );
