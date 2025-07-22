@@ -21,9 +21,6 @@ const Navbar = () => {
       <li><Link to={'/'}>Home</Link></li>
        <li><NavLink to={'/allscholarship'}>All Scholarships</NavLink></li>
        <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
-      {/* <li><Link to={'/addtutorials'}>Add Tutorials</Link></li>
-      {user && <><li><Link to={`/mytutorials/${user?.email}`}>My Tutorials</Link></li></>}
-      {user && <><li><Link to={`/mytutors/${user?.email}`}>My Tutors </Link></li></>}  */}
       <li><Link to={'/register'}>Register</Link></li>
     </>
     return (
@@ -48,7 +45,6 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     
-      <input type="checkbox" value="night" className="mx-1 lg:mx-5 toggle theme-controller" />
 
     {user? <>
       
@@ -62,7 +58,7 @@ const Navbar = () => {
         </div>
         
         </div>
-      <a onClick={handleLogout} id='logout' className='btn btn-primary mr-10'>Log out</a>
+      <a onClick={handleLogout} id='logout' className='btn btn-primary lg:mr-10'>Log out</a>
     </> : <NavLink className='btn btn-primary mr-10'  to={'/login'}>Login</NavLink>}
   </div>
 </div>

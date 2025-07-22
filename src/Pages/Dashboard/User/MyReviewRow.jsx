@@ -101,7 +101,7 @@ const handleDelete = (id) => {
         <td>{rating}</td>
         <th>
             <button onClick={() => handleEditClick(review)} className="btn  btn-xs">Edit</button>
-            <button onClick={()=>handleDelete(_id)} className="btn  btn-xs">Cancel</button>
+            <button onClick={()=>handleDelete(_id)} className="btn  btn-xs">Delete</button>
         </th>
       </tr>
       <ReviewEditModal

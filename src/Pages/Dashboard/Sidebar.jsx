@@ -24,13 +24,13 @@ const Sidebar = () => {
       {role=='user' && <><li><Link to={'myreviews'}>My Reviews </Link></li></>}
       {role=='admin' && <><li><Link to={'chart'}>Chart</Link></li></>}
       {role=='admin' && <><li><Link to={'addscholarship'}>Add Scholarship </Link></li></>}
-      {role=='admin' && <><li><Link to={'managescholarship'}>Manage Scholarship </Link></li></>}
+      {role=='admin' && <><li><Link to={'managescholarship'}>Manage Scholarships </Link></li></>}
       {role=='admin' && <><li><Link to={'manageappliedapplication'}>Manage Applied Application </Link></li></>}
       {role=='admin' && <><li><Link to={'manageusers'}>Manage Users</Link></li></>}
       {role=='admin' && <><li><Link to={'managereview'}>Manage Review </Link></li></>}
       {role=='moderator' && <><li><Link to={'addscholarship'}>Add Scholarship </Link></li></>}
-      {role=='moderator' && <><li><Link to={'managescholarship'}>Manage Scholarship </Link></li></>}
-      {role=='moderator' && <><li><Link to={'manageappliedapplication'}>Manage Applied Application  </Link></li></>}
+      {role=='moderator' && <><li><Link to={'managescholarship'}>Manage Scholarships </Link></li></>}
+      {role=='moderator' && <><li><Link to={'manageappliedapplication'}>All Applied Scholarships  </Link></li></>}
       {role=='moderator' && <><li><Link to={'managereview'}>All Reviews </Link></li></>}
     </ul>
   </div>

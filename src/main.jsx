@@ -29,6 +29,8 @@ import ManageApplications from './Pages/Dashboard/ManageApplications.jsx';
 import MyReviews from './Pages/Dashboard/User/MyReviews.jsx';
 import ManageReview from './Pages/Dashboard/Moderator/ManageReview.jsx';
 import Chart from './Pages/Dashboard/Admin/Chart.jsx';
+import AdminRoute from './Routes/AdminRoute.jsx';
+import ModeratorandAdminRoute from './Routes/ModeratorandAdminRoute.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -103,44 +105,57 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/managereview',
         element: <PrivateRoutes>
-          <ManageReview></ManageReview>
+          <ModeratorandAdminRoute>
+              <ManageReview></ManageReview>
+          </ModeratorandAdminRoute> 
         </PrivateRoutes>
       },
       {
         path: '/dashboard/applicationdetails/:id',
         element: <PrivateRoutes>
-          <ApplicationDetails></ApplicationDetails>
+            <ApplicationDetails></ApplicationDetails>
         </PrivateRoutes>
       },
       {
         path: '/dashboard/manageappliedapplication',
         element: <PrivateRoutes>
-          <ManageApplications></ManageApplications>
+          <ModeratorandAdminRoute>
+            <ManageApplications></ManageApplications>
+          </ModeratorandAdminRoute>
         </PrivateRoutes>
       },
       
       {
         path: '/dashboard/manageusers',
         element: <PrivateRoutes>
-          <ManageUsers></ManageUsers>
+          <AdminRoute>
+              <ManageUsers></ManageUsers>
+          </AdminRoute>
         </PrivateRoutes>
       },
       {
         path: '/dashboard/chart',
         element: <PrivateRoutes>
-          <Chart></Chart>
+          <AdminRoute>
+              <Chart></Chart>
+          </AdminRoute>
+          
         </PrivateRoutes>
       },
       {
         path: '/dashboard/addscholarship',
         element: <PrivateRoutes>
-          <AddScholarship></AddScholarship>
+          <ModeratorandAdminRoute>
+              <AddScholarship></AddScholarship>
+          </ModeratorandAdminRoute> 
         </PrivateRoutes>
       },
       {
         path:'/dashboard/managescholarship',
         element: <PrivateRoutes>
-          <AllScholarshipDashboard></AllScholarshipDashboard>
+          <ModeratorandAdminRoute>
+              <AllScholarshipDashboard></AllScholarshipDashboard>
+          </ModeratorandAdminRoute>    
         </PrivateRoutes>
       }
     ]

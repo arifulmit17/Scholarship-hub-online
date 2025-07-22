@@ -5,6 +5,7 @@ import useRole from '../../hooks/useRole';
 const Userprofile = () => {
     const {user}=use(AuthContext)
     const role=useRole()
+    
     return (
         <div>
             <img src={user.photoURL} alt="" />
