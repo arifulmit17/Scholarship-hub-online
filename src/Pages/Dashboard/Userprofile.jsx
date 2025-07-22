@@ -8,7 +8,7 @@ const Userprofile = () => {
     
     return (
         <div>
-            <img src={user.photoURL} alt="" />
+            <img className='w-[200px]' src={user.photoURL} alt="" />
             <h1>Name: {user.displayName}</h1>
             <h2>Email: {user.email}</h2>
             <h2>Role: {role}</h2>
