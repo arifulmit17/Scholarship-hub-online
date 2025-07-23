@@ -16,12 +16,12 @@ const Home = () => {
   });
   const topScholarships = [...data]
   .sort((a, b) => {
-    // First by application fees (ascending)
+    
     if (a.applicationFees !== b.applicationFees) {
       return a.applicationFees - b.applicationFees;
     }
 
-    // Then by createdAt or postDate (descending - newest first)
+    
     return new Date(b.submittedAt) - new Date(a.submittedAt);
   })
   .slice(0, 6);

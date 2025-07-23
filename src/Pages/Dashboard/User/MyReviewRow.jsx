@@ -30,8 +30,8 @@ const updateReviewMutation = useMutation({
       timer: 1500,
     });
 
-    // Invalidate any related queries to refresh data
-    queryClient.invalidateQueries({ queryKey: ['review', user?.email] }); // Change the key to match your app
+    
+    queryClient.invalidateQueries({ queryKey: ['review', user?.email] }); 
   },
   onError: (error) => {
     Swal.fire({
@@ -57,7 +57,7 @@ const deleteMutation = useMutation({
   onSuccess: (data) => {
     if (data.deletedCount) {
       Swal.fire("Deleted!", "Review has been deleted.", "success");
-      queryClient.invalidateQueries(['mytutorial']); // Refresh the list
+      queryClient.invalidateQueries(['mytutorial']); 
     }
   },
   onError: () => {

@@ -15,8 +15,7 @@ const UserRow = ({user}) => {
     },
     onSuccess: data => {
       console.log(data)
-      // refetch()
-      // invalidate query
+      
       queryClient.invalidateQueries(['users'])
     },
     onError: error => {
@@ -38,7 +37,7 @@ const UserRow = ({user}) => {
   onSuccess: (data) => {
     if (data.deletedCount) {
       Swal.fire("Deleted!", "user has been deleted.", "success");
-      queryClient.invalidateQueries(['users']); // Refresh the list
+      queryClient.invalidateQueries(['users']); 
     }
   },
   onError: () => {

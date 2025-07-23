@@ -140,7 +140,7 @@ navigate('/')
     Register Now
   </h1>
 
-  {/* Google Sign-in */}
+  
   <div className="mb-4">
     <button
       onClick={handleGoogleSignIn}
@@ -157,14 +157,14 @@ navigate('/')
     </button>
   </div>
 
-  {/* Divider */}
+  
   <div className="flex items-center my-4">
     <hr className="flex-grow border-gray-300 dark:border-gray-700" />
     <span className="mx-3 text-gray-500 dark:text-gray-400 text-sm">OR</span>
     <hr className="flex-grow border-gray-300 dark:border-gray-700" />
   </div>
 
-  {/* Form */}
+  
   <form onSubmit={handleRegister} className="space-y-4">
     <input
       type="text"
@@ -186,7 +186,7 @@ navigate('/')
       className="input input-bordered w-full"
     />
 
-    {/* Password Input with Toggle */}
+    
     <div className="relative">
       <input
         type={showpassword ? "text" : "password"}
@@ -206,7 +206,7 @@ navigate('/')
       </button>
     </div>
 
-    {/* Submit */}
+    
     <button
       type="submit"
       className="btn bg-blue-600 hover:bg-blue-700 text-white w-full"
@@ -215,7 +215,7 @@ navigate('/')
     </button>
   </form>
 
-  {/* Footer */}
+  
   <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
     Already registered?{" "}
     <NavLink to="/login" className="font-semibold hover:underline text-blue-600 dark:text-blue-400">

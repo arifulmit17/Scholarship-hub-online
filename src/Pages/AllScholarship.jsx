@@ -17,7 +17,7 @@ const AllScholarship = () => {
     initialData: [],
   });
   
-  // Filtered by search input
+  
   const filteredScholarships = data.filter((item) =>
     [item.scholarshipName, item.universityName, item.degree]
       .some((field) =>
@@ -25,19 +25,19 @@ const AllScholarship = () => {
       )
   );
 
-  // Pagination logic
+  
   const totalPages = Math.ceil(filteredScholarships.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedScholarships = filteredScholarships.slice(startIndex, startIndex + itemsPerPage);
 
   const handleSearch = (e) => {
     setSearchText(e.target.value);
-    setCurrentPage(1); // Reset to page 1 on new search
+    setCurrentPage(1); 
   };
 
   return (
     <div>
-      {/* Search Input */}
+      
       <div className="mb-4">
         <input
           type="text"
@@ -48,7 +48,7 @@ const AllScholarship = () => {
         />
       </div>
 
-      {/* Display Scholarships or Empty Message */}
+      
       {paginatedScholarships.length === 0 ? (
         <div className="text-center text-gray-500 mt-10">
           No scholarship available
@@ -60,7 +60,7 @@ const AllScholarship = () => {
         ))
       )}
 
-      {/* Pagination Buttons */}
+      
       {totalPages > 1 && (
         <div className="flex justify-center mt-6 space-x-2">
           {Array.from({ length: totalPages }, (_, index) => (

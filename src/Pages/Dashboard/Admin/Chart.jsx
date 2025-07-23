@@ -27,7 +27,7 @@ const Chart = () => {
 
         if (isLoading) return <div>Loading...</div>;
 
-  // Transform the data for the chart
+  
   const chartData = data.map((item) => ({
     name: item.scholarshipName || 'Unnamed',
     applicationFees: Number(item.applicationFees),

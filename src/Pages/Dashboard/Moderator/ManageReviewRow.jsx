@@ -14,7 +14,7 @@ const deleteTutorialMutation = useMutation({
   onSuccess: (data) => {
     if (data.deletedCount) {
       Swal.fire("Deleted!", "Your file has been deleted.", "success");
-      queryClient.invalidateQueries(['mytutorial']); // Refresh the list
+      queryClient.invalidateQueries(['mytutorial']); 
     }
   },
   onError: () => {

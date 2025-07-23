@@ -27,7 +27,7 @@ const deleteMutation = useMutation({
   onSuccess: (data) => {
     if (data.deletedCount) {
       Swal.fire("Deleted!", "Your file has been deleted.", "success");
-      queryClient.invalidateQueries(['myapplication']); // Refresh the list
+      queryClient.invalidateQueries(['myapplication']); 
     }
   },
   onError: () => {
@@ -90,8 +90,7 @@ const handleDelete = (id) => {
     
       };
 
-    // Submit to your backend here
-    // await axios.post('/api/reviews', fullReview);
+    
     
       const handleEdit = () => {
     if (applicationStatus === 'pending') {

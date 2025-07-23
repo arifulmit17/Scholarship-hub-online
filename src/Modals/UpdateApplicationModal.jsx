@@ -38,7 +38,7 @@ const UpdateApplicationModal = ({ isOpen, onClose, application,universityName,sc
     await updateApplication(data);
   };
 
-  // Optional: reset form when application changes
+  
   React.useEffect(() => {
     reset(application);
   }, [application, reset]);

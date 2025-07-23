@@ -10,7 +10,7 @@ const ReviewEditModal = ({ isOpen, onClose, reviewData, onUpdate }) => {
     formState: { errors },
   } = useForm();
 
-  // Pre-fill form with existing data
+  
   useEffect(() => {
     if (reviewData) {
       setValue('rating', reviewData.rating);
@@ -26,7 +26,7 @@ const ReviewEditModal = ({ isOpen, onClose, reviewData, onUpdate }) => {
       date: new Date().toISOString(),
     };
 
-    onUpdate(updatedReview); // Call parent's update handler
+    onUpdate(updatedReview); 
     reset();
     onClose();
   };

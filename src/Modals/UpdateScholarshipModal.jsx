@@ -10,7 +10,7 @@ const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
   const [imageFile, setImageFile] = useState(null);
   const queryClient = useQueryClient();
     
-  // Prefill form when scholarship changes
+  
   useEffect(() => {
     if (scholarship) {
       reset(scholarship);
@@ -21,7 +21,7 @@ const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
   if (file) {
-    setImageFile(file); // store file for upload
+    setImageFile(file); 
     setImagePreview(URL.createObjectURL(file));
   }
   };
@@ -29,7 +29,7 @@ const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
   const formData = new FormData();
   formData.append('image', image);
 
-  const imgbbKey = import.meta.env.VITE_IMGBB_API_KEY; // Set this in your .env
+  const imgbbKey = import.meta.env.VITE_IMGBB_API_KEY; 
   const url = `https://api.imgbb.com/1/upload?key=${imgbbKey}`;
 
   const res = await axios.post(url, formData);
@@ -55,7 +55,7 @@ const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
   const onSubmit =async (data) => {
     let updatedImageUrl = scholarship.universityImage;
 
-    // Upload only if a new image is selected
+    
     if (imageFile) {
       updatedImageUrl = await uploadToImgBB(imageFile);
     }
@@ -66,7 +66,7 @@ const UpdateScholarshipModal = ({ isOpen, onClose, scholarship }) => {
     };
 
     updateMutation.mutate({ ...updatedScholarship, _id: scholarship._id });
-    // updateMutation.mutate({ ...data, _id: scholarship._id });
+   
   };
 
   if (!isOpen) return null;
