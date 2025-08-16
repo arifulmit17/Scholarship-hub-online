@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import SchoarshipCard from '../Components/ScholarshipCard';
 import Newsletter from '../Components/Newsletter';
 import Review from '../Components/Review';
+import FaqSection from '../Components/faqSection';
 
 const Home = () => {
     const { data = [], isLoading } = useQuery({
@@ -13,6 +14,7 @@ const Home = () => {
     queryFn: async () => {
       const res = await axios(`${import.meta.env.VITE_API_URL}/scholarship`);
       return res.data;
+
     },
     initialData: [],
   });
@@ -78,6 +80,10 @@ const Home = () => {
               <Review></Review>
             </section>
             <section className='dark:text-white w-11/12 mx-auto'>
+              <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
+              <FaqSection></FaqSection>
+            </section>
+            {/* <section className='dark:text-white w-11/12 mx-auto'>
                 <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
                 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" defaultChecked />
@@ -94,7 +100,7 @@ const Home = () => {
   <div className="collapse-title font-semibold">How do I give my reviews?</div>
   <div className="collapse-content text-sm">Go to myapplications section and click review button, then review will be added to the particular scholarship.</div>
 </div>
-            </section>
+            </section> */}
 
         </div>
     );
