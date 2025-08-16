@@ -7,6 +7,7 @@ import SchoarshipCard from '../Components/ScholarshipCard';
 import Newsletter from '../Components/Newsletter';
 import Review from '../Components/Review';
 import FaqSection from '../Components/faqSection';
+import Members from '../Components/Members';
 
 const Home = () => {
     const { data = [], isLoading } = useQuery({
@@ -36,7 +37,7 @@ const Home = () => {
                 <Banner></Banner>
             </section>
             <section className='w-11/12 mx-auto'>
-                <h1 className='font-bold text-5xl text-center my-10'>Top scholarships</h1>
+                <h1 className='font-bold text-5xl text-secondary text-center my-10'>Top scholarships</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                     {
                         topScholarships.map(scholarship=><SchoarshipCard key={scholarship._id} scholarship={scholarship}></SchoarshipCard>)
@@ -51,7 +52,8 @@ const Home = () => {
             <section className='dark:text-white w-11/12 mx-auto'>
 
                 <h1 className='font-bold text-5xl text-center my-10'>Members Only</h1>
-                <div  className='w-11/12 mx-auto lg:flex'>
+                <Members></Members>
+                {/* <div  className='w-11/12 mx-auto lg:flex'>
                 <div className='w-5/12  '>
                     <img className='md:w-[300px] ml-30 rounded-2xl' src="https://i.postimg.cc/0Qzm235s/member.png" alt="" />
                 </div>
@@ -69,7 +71,7 @@ const Home = () => {
                      <button className='text-white ml-15 lg:ml-40 rounded-2xl btn btn-primary btn-wide'>Register Now</button>
                      </NavLink>
                 </div>
-            </div>
+            </div> */}
             </section>
             <section className='dark:text-white w-11/12 mx-auto'>
               <h1 className='font-bold text-5xl text-center my-10'>Newsletter</h1>
@@ -80,27 +82,10 @@ const Home = () => {
               <Review></Review>
             </section>
             <section className='dark:text-white w-11/12 mx-auto'>
-              <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
+             
               <FaqSection></FaqSection>
             </section>
-            {/* <section className='dark:text-white w-11/12 mx-auto'>
-                <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
-                <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
-  <input type="radio" name="my-accordion-2" defaultChecked />
-  <div className="collapse-title  font-semibold">How do I get the opportunities?</div>
-  <div className="collapse-content text-sm">Click the "Register" button in the navbar and follow the registration process.</div>
-</div>
-<div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
-  <input type="radio" name="my-accordion-2" />
-  <div className="collapse-title font-semibold">I cannot find the logout button , where is it?</div>
-  <div className="collapse-content text-sm">Check on the top right corner, then click on logout button</div>
-</div>
-<div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
-  <input type="radio" name="my-accordion-2" />
-  <div className="collapse-title font-semibold">How do I give my reviews?</div>
-  <div className="collapse-content text-sm">Go to myapplications section and click review button, then review will be added to the particular scholarship.</div>
-</div>
-            </section> */}
+            
 
         </div>
     );
