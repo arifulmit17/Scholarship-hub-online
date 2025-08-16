@@ -21,10 +21,11 @@ const Navbar = () => {
       <li><Link to={'/'}>Home</Link></li>
        <li><NavLink to={'/allscholarship'}>All Scholarships</NavLink></li>
        <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
+       <li><NavLink to={'/about'}>About us</NavLink></li>
       <li><Link to={'/register'}>Register</Link></li>
     </>
     return (
-        <div className="navbar sticky top-0 z-[100] bg-white dark:text-white ">
+        <div className="navbar sticky top-0 z-[100] h-14 bg-linear-to-r from-cyan-200 to-blue-500 text-neutral  ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,7 +37,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost ml-7 text-xl"> <span className='text-green-500 '>Scholarship -</span>Hub</a>
+    <a className="btn btn-ghost ml-7 text-xl"> <span className='text-blue-500 '>Scholarship</span>- Hub</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -58,6 +59,7 @@ const Navbar = () => {
         </div>
         
         </div>
+        <input type="checkbox" value="night" className="toggle theme-controller" />
       <a onClick={handleLogout} id='logout' className='btn btn-primary lg:mr-10'>Log out</a>
     </> : <NavLink className='btn btn-primary mr-10'  to={'/login'}>Login</NavLink>}
   </div>

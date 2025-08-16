@@ -31,6 +31,7 @@ import ManageReview from './Pages/Dashboard/Moderator/ManageReview.jsx';
 import Chart from './Pages/Dashboard/Admin/Chart.jsx';
 import AdminRoute from './Routes/AdminRoute.jsx';
 import ModeratorandAdminRoute from './Routes/ModeratorandAdminRoute.jsx';
+import AboutSection from './Pages/AboutSection.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         Component: Register
+      },
+      {
+        path:'/about',
+        Component: AboutSection
       },
       {
         path: '/allscholarship',

@@ -4,6 +4,7 @@ import { NavLink } from 'react-router';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import SchoarshipCard from '../Components/ScholarshipCard';
+import Newsletter from '../Components/Newsletter';
 
 const Home = () => {
     const { data = [], isLoading } = useQuery({
@@ -67,7 +68,10 @@ const Home = () => {
                 </div>
             </div>
             </section>
-
+            <section className='dark:text-white '>
+              <h1 className='font-bold text-5xl text-center my-10'>Newsletter</h1>
+              <Newsletter></Newsletter>
+            </section>
             <section className='dark:text-white '>
                 <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
                 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
