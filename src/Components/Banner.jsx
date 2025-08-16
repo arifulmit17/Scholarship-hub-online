@@ -8,7 +8,7 @@ const Banner = () => {
         <div>
         <Carousel showThumbs={false} infiniteLoop autoPlay>
       <div>
-        <img className='h-[400px]' src="https://i.postimg.cc/RFqw8kxt/images-17.jpg" alt="Slide 1" />
+        <img className='h-[400px] bg-cover' src="https://i.postimg.cc/RFqw8kxt/images-17.jpg" alt="Slide 1" />
         <div className="custom-text-overlay flex flex-col ml-10 items-center md:items-center lg:items-start relative">
           <h2 className="text-white text-4xl mb-3 font-bold">Apply for scholarship now</h2>
           <Link to={'/register'}>
@@ -18,7 +18,7 @@ const Banner = () => {
         </div>
       </div>
       <div >
-        <img className='h-[400px]' src="https://i.postimg.cc/QNySc0kn/DHEO-Scholarships-Portal-scaled.jpg" alt="Slide 2" />
+        <img className='h-[400px] bg-cover' src="https://i.postimg.cc/QNySc0kn/DHEO-Scholarships-Portal-scaled.jpg" alt="Slide 2" />
         <div className="custom-text-overlay flex flex-col ml-10 items-center md:items-center lg:items-start relative">
           <h2 className="text-white text-4xl mb-3 font-bold">Apply for scholarship now</h2>
           <Link to={'/register'}>
@@ -27,7 +27,7 @@ const Banner = () => {
         </div>
       </div>
       <div>
-        <img className='h-[400px]' src="https://i.postimg.cc/JhMsyCyV/images-15.jpg" alt="Slide 3" />
+        <img className='h-[400px] bg-cover' src="https://i.postimg.cc/JhMsyCyV/images-15.jpg" alt="Slide 3" />
         <div className="custom-text-overlay flex flex-col ml-10 items-center md:items-center lg:items-start relative">
           <h2 className="text-white text-4xl mb-3 font-bold">Apply for scholarship now</h2>
           <Link to={'/register'}>

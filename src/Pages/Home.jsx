@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import SchoarshipCard from '../Components/ScholarshipCard';
 import Newsletter from '../Components/Newsletter';
+import Review from '../Components/Review';
 
 const Home = () => {
     const { data = [], isLoading } = useQuery({
@@ -32,7 +33,7 @@ const Home = () => {
            <section className='w-full'>
                 <Banner></Banner>
             </section>
-            <section>
+            <section className='w-11/12 mx-auto'>
                 <h1 className='font-bold text-5xl text-center my-10'>Top scholarships</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                     {
@@ -45,7 +46,7 @@ const Home = () => {
                 
             </section>
 
-            <section className='dark:text-white'>
+            <section className='dark:text-white w-11/12 mx-auto'>
 
                 <h1 className='font-bold text-5xl text-center my-10'>Members Only</h1>
                 <div  className='w-11/12 mx-auto lg:flex'>
@@ -68,11 +69,15 @@ const Home = () => {
                 </div>
             </div>
             </section>
-            <section className='dark:text-white '>
+            <section className='dark:text-white w-11/12 mx-auto'>
               <h1 className='font-bold text-5xl text-center my-10'>Newsletter</h1>
               <Newsletter></Newsletter>
             </section>
-            <section className='dark:text-white '>
+            <section className='dark:text-white w-11/12 mx-auto'>
+              <h1 className='font-bold text-5xl text-center my-10'>Reviews</h1>
+              <Review></Review>
+            </section>
+            <section className='dark:text-white w-11/12 mx-auto'>
                 <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
                 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" defaultChecked />

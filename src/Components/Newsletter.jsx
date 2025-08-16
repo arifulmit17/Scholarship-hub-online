@@ -3,7 +3,7 @@ export default function Newsletter() {
     <section className="bg-base-200 py-16 px-6 md:px-12 lg:px-24">
       <div className="max-w-3xl mx-auto text-center">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
           Stay Updated with Scholarship Hub
         </h2>
 
