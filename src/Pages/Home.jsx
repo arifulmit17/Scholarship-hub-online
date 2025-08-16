@@ -8,6 +8,7 @@ import Newsletter from '../Components/Newsletter';
 import Review from '../Components/Review';
 import FaqSection from '../Components/faqSection';
 import Members from '../Components/Members';
+import Promotion from '../Components/Promotion';
 
 const Home = () => {
     const { data = [], isLoading } = useQuery({
@@ -84,6 +85,10 @@ const Home = () => {
             <section className='dark:text-white w-11/12 mx-auto'>
              
               <FaqSection></FaqSection>
+            </section>
+            <section className='dark:text-white mx-auto'>
+             <h1 className='font-bold text-5xl text-center my-10'>Promotion</h1>
+             <Promotion></Promotion>
             </section>
             
 

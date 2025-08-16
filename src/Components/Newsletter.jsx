@@ -25,7 +25,7 @@ export default function Newsletter() {
             className="input input-bordered w-full sm:flex-1"
             required
           />
-          <button className="btn btn-primary w-full sm:w-auto">
+          <button className="btn btn-secondary w-full sm:w-auto transition duration-300 ease-in-out transform hover:scale-105 hover:bg-primary-focus">
             Subscribe
           </button>
         </form>

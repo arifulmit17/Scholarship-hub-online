@@ -47,7 +47,7 @@ export default function Members() {
           {/* CTA Button */}
           <div className="pt-4">
             <NavLink to="/register">
-              <button className="btn btn-primary btn-wide rounded-2xl">
+              <button className="btn btn-secondary btn-wide transition duration-300 ease-in-out transform hover:scale-105 hover:bg-primary-focus rounded-2xl">
                 Register Now
               </button>
             </NavLink>

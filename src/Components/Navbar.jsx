@@ -25,7 +25,7 @@ const Navbar = () => {
       <li><Link to={'/register'}>Register</Link></li>
     </>
     return (
-        <div className="navbar sticky top-0 z-[100] h-14 bg-linear-to-r from-cyan-200 to-blue-500 text-neutral  ">
+        <div className="navbar sticky top-0 z-[100] h-14 bg-linear-to-r from-teal-200 to-teal-500 text-neutral  ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -60,8 +60,8 @@ const Navbar = () => {
         
         </div>
         <input type="checkbox" value="night" className="toggle theme-controller" />
-      <a onClick={handleLogout} id='logout' className='btn btn-primary lg:mr-10'>Log out</a>
-    </> : <NavLink className='btn btn-primary mr-10'  to={'/login'}>Login</NavLink>}
+      <a onClick={handleLogout} id='logout' className='btn btn-secondary lg:mr-10'>Log out</a>
+    </> : <NavLink className='btn btn-secondary mr-10'  to={'/login'}>Login</NavLink>}
   </div>
 </div>
     );

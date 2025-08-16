@@ -55,8 +55,10 @@ const AllScholarship = () => {
         </div>
       ) : (
         paginatedScholarships.map((scholarship) => (
-    
-          <SchoarshipCard key={scholarship._id} scholarship={scholarship}></SchoarshipCard>
+          <div className='w-1/3 mx-auto my-5'>
+            <SchoarshipCard key={scholarship._id} scholarship={scholarship}></SchoarshipCard>
+          </div>
+          
         ))
       )}
 
