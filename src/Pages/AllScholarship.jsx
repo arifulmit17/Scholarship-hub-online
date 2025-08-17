@@ -179,7 +179,7 @@ const AllScholarship = () => {
             <button
               key={index}
               onClick={() => setCurrentPage(index + 1)}
-              className={`btn btn-sm ${currentPage === index + 1 ? 'btn-primary' : 'btn-outline'}`}
+              className={`btn btn-sm ${currentPage === index + 1 ? 'btn-secondary' : 'btn-outline'}`}
             >
               {index + 1}
             </button>

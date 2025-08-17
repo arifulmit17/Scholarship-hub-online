@@ -209,7 +209,7 @@ navigate('/')
     
     <button
       type="submit"
-      className="btn bg-blue-600 hover:bg-blue-700 text-white w-full"
+      className="btn bg-secondary hover:bg-primary text-white w-full"
     >
       Register
     </button>
@@ -218,7 +218,7 @@ navigate('/')
   
   <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
     Already registered?{" "}
-    <NavLink to="/login" className="font-semibold hover:underline text-blue-600 dark:text-blue-400">
+    <NavLink to="/login" className="font-semibold hover:underline text-secondary dark:text-blue-400">
       Login here
     </NavLink>
   </p>

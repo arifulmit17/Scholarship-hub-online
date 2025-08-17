@@ -38,7 +38,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost lg:ml-7 text-lg lg:text-xl"> <span className='text-teal-800 '>Scholarship</span>- Hub</a>
+    <a className=" lg:ml-7 text-m lg:text-xl"> <span className='text-teal-800 '>Scholarship</span>- Hub</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -62,7 +62,7 @@ const Navbar = () => {
         
         </div>
         <input type="checkbox" value="night" className="toggle mr-2 theme-controller" />
-      <a onClick={handleLogout} id='logout' className='btn btn-secondary lg:mr-10'>Log out</a>
+      <a onClick={handleLogout} id='logout' className='btn btn-secondary mr-3 lg:mr-10'>Log out</a>
     </> : <NavLink className='btn btn-secondary mr-10'  to={'/login'}>Login</NavLink>}
   </div>
 </div>

@@ -14,11 +14,12 @@ const ManageUsers = () => {
             initialData:[]
             
         })
+        console.log(data);
         const filteredData =
     selectedRole === 'all'
       ? data
       : data.filter((user) => user.role === selectedRole);
-        
+    console.log(filteredData);
     return (
          <div>
             <div className="flex justify-end mb-4">

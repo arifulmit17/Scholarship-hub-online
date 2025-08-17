@@ -186,7 +186,7 @@ const ScholarshipDetails = () => {
   return (
     <div className="max-w-4xl mx-auto p-6">
       {/* Scholarship Card */}
-      <div className="card bg-white shadow-xl rounded-2xl border border-gray-200 hover:shadow-2xl transition duration-300">
+      <div className="card w-1/2 mx-auto bg-base-300 shadow-xl rounded-2xl border border-gray-200 hover:shadow-2xl transition duration-300">
         <figure className="relative">
           <img
             src={universityImage}
@@ -198,35 +198,35 @@ const ScholarshipDetails = () => {
           </span>
         </figure>
         <div className="card-body space-y-3">
-          <h2 className="text-2xl font-bold text-gray-800">
+          <h2 className="text-2xl font-bold text-secondary">
             {universityName}
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-600">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-secondary">
             <p className="flex items-center gap-2">
               <MapPin size={16} /> {universityCity}
             </p>
             <p className="flex items-center gap-2">
               <Star size={16} className="text-yellow-500" /> {Rating} / 5
             </p>
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 text-secondary">
               <BookOpen size={16} /> {Subject_name} ({subjectCategory})
             </p>
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 text-secondary">
               <Calendar size={16} /> Deadline: {applicationDeadline}
             </p>
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 text-secondary">
               <DollarSign size={16} /> Fees: ${applicationFees}
             </p>
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 text-secondary">
               <DollarSign size={16} /> Service: ${serviceCharge}
             </p>
-            <p className="flex items-center gap-2 col-span-2">
+            <p className="flex items-center gap-2 col-span-2 text-secondary">
               <FileText size={16} /> Post Date: {postDate}
             </p>
           </div>
 
-          <p className="text-gray-700 leading-relaxed">{description}</p>
+          <p className="text-secondary leading-relaxed">{description}</p>
 
           <div className="card-actions justify-end mt-4">
             <NavLink

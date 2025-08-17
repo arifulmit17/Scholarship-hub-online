@@ -27,7 +27,7 @@ const Sidebar = () => {
       {role=='admin' && <><li><Link to={'addscholarship'}>Add Scholarship </Link></li></>}
       {role=='admin' && <><li><Link to={'managescholarship'}>Manage Scholarships </Link></li></>}
       {role=='admin' && <><li><Link to={'manageappliedapplication'}>Manage Applied Application </Link></li></>}
-      {role=='admin' && <><li><Link to={'manageusers'}>Manage Users</Link></li></>}
+      {/* {role=='admin' && <><li><Link to={'manageusers'}>Manage Users</Link></li></>} */}
       {role=='admin' && <><li><Link to={'managereview'}>Manage Review </Link></li></>}
       {role=='moderator' && <><li><Link to={'chart'}>Overview</Link></li></>}
       {role=='moderator' && <><li><Link to={'addscholarship'}>Add Scholarship </Link></li></>}

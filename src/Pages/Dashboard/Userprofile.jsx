@@ -40,7 +40,7 @@ const UserProfile = () => {
   
           if (isLoading) return <div>Loading...</div>;
 
-    console.log(data);
+   
   return (
     <div className="max-w-sm mx-auto mt-12 p-6 bg-base-100 rounded-2xl shadow-lg text-center">
       {/* Avatar */}
