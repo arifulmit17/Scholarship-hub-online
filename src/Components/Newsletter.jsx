@@ -1,6 +1,6 @@
 export default function Newsletter() {
   return (
-    <section className="bg-base-200 py-16 px-6 md:px-12 lg:px-24">
+    <section className="bg-base-200 rounded-2xl shadow-sm py-16 px-6 md:px-12 lg:px-24">
       <div className="max-w-3xl mx-auto text-center">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">

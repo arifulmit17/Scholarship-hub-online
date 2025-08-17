@@ -9,6 +9,7 @@ import Review from '../Components/Review';
 import FaqSection from '../Components/faqSection';
 import Members from '../Components/Members';
 import Promotion from '../Components/Promotion';
+import Partners from '../Components/Partners';
 
 const Home = () => {
     const { data = [], isLoading } = useQuery({
@@ -45,7 +46,7 @@ const Home = () => {
                     }
                 </div>
                 <div className='flex my-10 items-center justify-center'>
-                        <NavLink to={'/allscholarship'}><button className='btn btn-primary'>All scholarships</button></NavLink>
+                        <NavLink to={'/allscholarship'}><button className='btn btn-secondary'>All scholarships</button></NavLink>
                 </div>
                 
             </section>
@@ -89,6 +90,10 @@ const Home = () => {
             <section className='dark:text-white mx-auto'>
              <h1 className='font-bold text-5xl text-center my-10'>Promotion</h1>
              <Promotion></Promotion>
+            </section>
+            <section className='dark:text-white mx-auto'>
+             <h1 className='font-bold text-5xl text-center my-10'>Partners</h1>
+                  <Partners></Partners>
             </section>
             
 

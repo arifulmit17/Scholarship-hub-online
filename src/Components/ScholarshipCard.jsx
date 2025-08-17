@@ -83,7 +83,7 @@ const ScholarshipCard = ({ scholarship }) => {
       {/* Card Content */}
       <div className="p-6 space-y-3">
         {/* University Name */}
-        <h2 className="text-xl font-bold text-primary group-hover:text-secondary transition">
+        <h2 className="text-xl font-bold text-secondary group-hover:text-black transition">
           {universityName}
         </h2>
         {/* Scholarship Name */}
@@ -107,16 +107,13 @@ const ScholarshipCard = ({ scholarship }) => {
             <DollarSign className="w-4 h-4 text-secondary" />
             Fees: {applicationFees}
           </p>
-          <p className="flex items-center gap-2 col-span-full">
-            <Star className="w-4 h-4 text-yellow-400" />
-            Rating: {Rating}
-          </p>
+          
         </div>
 
         {/* CTA Button */}
         <div className="mt-4 flex justify-end">
           <NavLink to={`/scholarshipdetails/${_id}`}>
-            <button className="btn btn-gradient btn-wide rounded-full bg-gradient-to-r from-primary to-secondary text-white transition transform hover:scale-105">
+            <button className="btn btn-gradient btn-wide rounded-full bg-secondary text-white transition transform hover:scale-105">
               View Details
             </button>
           </NavLink>

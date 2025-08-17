@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 
 export default function Members() {
   return (
-    <section className="w-11/12 mx-auto py-16">
+    <section className="w-11/12 bg-base-200 rounded-2xl shadow-sm mx-auto py-16">
       <div className="flex flex-col lg:flex-row items-center gap-12">
         {/* Left Image */}
         <div className="flex-1 flex justify-center">
@@ -16,7 +16,7 @@ export default function Members() {
         </div>
 
         {/* Right Content */}
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 flex flex-col lg:items-start items-center space-y-6">
           {/* Heading */}
           <h1 className="text-3xl font-bold text-secondary">
             Member’s Benefits
@@ -45,9 +45,9 @@ export default function Members() {
           </ul>
 
           {/* CTA Button */}
-          <div className="pt-4">
+          <div className="pt-4 flex items-center">
             <NavLink to="/register">
-              <button className="btn btn-secondary btn-wide transition duration-300 ease-in-out transform hover:scale-105 hover:bg-primary-focus rounded-2xl">
+              <button className="btn btn-secondary  btn-wide transition duration-300 ease-in-out transform hover:scale-105 hover:bg-primary-focus rounded-2xl">
                 Register Now
               </button>
             </NavLink>

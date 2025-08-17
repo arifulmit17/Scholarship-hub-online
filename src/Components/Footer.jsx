@@ -8,14 +8,14 @@ const Footer = () => {
   const {user}=use(AuthContext)
     return (
         <footer className="footer footer-horizontal footer-center h-full bg-linear-to-r from-cyan-200 to-blue-500 text-neutral rounded p-10">
-  <nav className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <nav className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
         <NavLink to={'/allscholarship'}>All Scholarships</NavLink>
         <NavLink to={'/dashboard'}>Dashboard</NavLink>
         <Link to={'/register'}>Register</Link>
     
   </nav>
   <nav>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
           <a target='blank' href='https://x.com/i/flow/login'>
           <FaTwitter size={30} />
     

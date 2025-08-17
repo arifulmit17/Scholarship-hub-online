@@ -18,7 +18,7 @@ export default function Promotion() {
             <h1 className="text-3xl md:text-4xl font-bold text-secondary">
               Unlock Your Scholarship Opportunities
             </h1>
-            <p className="text-base md:text-lg text-base-content/80 max-w-lg">
+            <p className="text-base md:text-lg md:ml-12 text-base-content/80 max-w-lg">
               Join <span className="font-semibold">Scholarship Hub</span> today
               and explore hundreds of scholarships, grants, and study programs
               tailored for students like you.
