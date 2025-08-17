@@ -83,7 +83,7 @@ const ScholarshipCard = ({ scholarship }) => {
       {/* Card Content */}
       <div className="p-6 space-y-3">
         {/* University Name */}
-        <h2 className="text-xl font-bold text-secondary group-hover:text-black transition">
+        <h2 className="text-xl font-bold text-secondary group-hover:text-primary transition">
           {universityName}
         </h2>
         {/* Scholarship Name */}

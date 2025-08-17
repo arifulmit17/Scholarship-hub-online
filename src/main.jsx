@@ -141,9 +141,9 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/chart',
         element: <PrivateRoutes>
-          <AdminRoute>
+          <ModeratorandAdminRoute>
               <Chart></Chart>
-          </AdminRoute>
+          </ModeratorandAdminRoute>
           
         </PrivateRoutes>
       },

@@ -20,8 +20,9 @@ const Navbar = () => {
     const links=<>
       <li><Link to={'/'}>Home</Link></li>
        <li><NavLink to={'/allscholarship'}>All Scholarships</NavLink></li>
-       <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
-       <li><NavLink to={'/about'}>About us</NavLink></li>
+       {user && <><li><NavLink to={'/dashboard'}>Dashboard</NavLink></li></>}
+       {user && <><li><NavLink to={'/about'}>About us</NavLink></li></>}
+       
       <li><Link to={'/register'}>Register</Link></li>
     </>
     return (
