@@ -84,7 +84,7 @@ const Home = () => {
               <Review></Review>
             </section>
             <section className='dark:text-white w-11/12 mx-auto'>
-             
+             <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
               <FaqSection></FaqSection>
             </section>
             <section className='dark:text-white mx-auto'>

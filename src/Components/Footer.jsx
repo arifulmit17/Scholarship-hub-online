@@ -7,7 +7,7 @@ import { AuthContext } from '../Contexts/AuthContext';
 const Footer = () => {
   const {user}=use(AuthContext)
     return (
-        <footer className="footer footer-horizontal footer-center h-full bg-linear-to-r from-cyan-200 to-blue-500 text-neutral rounded p-10">
+        <footer className="footer footer-horizontal footer-center h-full bg-linear-to-r from-teal-200 to-teal-500 text-neutral rounded p-10">
   <nav className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
         <NavLink to={'/allscholarship'}>All Scholarships</NavLink>
         <NavLink to={'/dashboard'}>Dashboard</NavLink>

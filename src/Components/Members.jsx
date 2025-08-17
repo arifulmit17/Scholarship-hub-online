@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 
 export default function Members() {
   return (
-    <section className="w-11/12 bg-base-200 rounded-2xl shadow-sm mx-auto py-16">
+    <section className="w-full bg-base-200 rounded-2xl shadow-sm mx-auto py-16">
       <div className="flex flex-col lg:flex-row items-center gap-12">
         {/* Left Image */}
         <div className="flex-1 flex justify-center">

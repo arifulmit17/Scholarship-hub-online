@@ -1,12 +1,12 @@
 export default function FaqSection() {
   return (
-    <section className="w-full mx-auto py-16">
+    <section className="w-full bg-base-200 rounded-2xl shadow-sm mx-auto py-10">
       {/* Heading */}
       <h1 className="font-bold text-4xl md:text-5xl text-center mb-12 text-secondary">
         Frequently Asked Questions
       </h1>
 
-      <div className="max-w-3xl mx-auto space-y-4">
+      <div className="max-w-full mx-auto space-y-4">
         {/* Question 1 */}
         <div className="collapse collapse-arrow bg-base-200 border border-base-300">
           <input type="radio" name="faq-accordion" defaultChecked />

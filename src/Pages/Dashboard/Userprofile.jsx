@@ -46,12 +46,6 @@ const UserProfile = () => {
         {role}
       </span>
 
-      {/* Optional Edit Profile Button */}
-      <div className="mt-6">
-        <button className="btn btn-primary btn-sm rounded-full hover:scale-105 transition-transform duration-300">
-          Edit Profile
-        </button>
-      </div>
     </div>
   );
 };

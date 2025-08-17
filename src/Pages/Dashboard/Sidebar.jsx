@@ -16,13 +16,14 @@ const Sidebar = () => {
   
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-    <ul className="menu bg-green-200 text-base-content min-h-full w-50 p-4">
+    <ul className="menu bg-green-200 text-neutral min-h-full w-50 p-4">
       {/* Sidebar content here */}
+      <li><input type="checkbox" value="night" className="toggle theme-controller" /></li>
        <li><Link to={'/'}>Home</Link></li>
        {user && <><li><Link to={'myprofile'}>Profile</Link></li></>}
       {role=='user' && <><li><Link to={'myapplication'}>My Applications </Link></li></>}
       {role=='user' && <><li><Link to={'myreviews'}>My Reviews </Link></li></>}
-      {role=='admin' && <><li><Link to={'chart'}>Chart</Link></li></>}
+      {role=='admin' && <><li><Link to={'chart'}>Overview</Link></li></>}
       {role=='admin' && <><li><Link to={'addscholarship'}>Add Scholarship </Link></li></>}
       {role=='admin' && <><li><Link to={'managescholarship'}>Manage Scholarships </Link></li></>}
       {role=='admin' && <><li><Link to={'manageappliedapplication'}>Manage Applied Application </Link></li></>}

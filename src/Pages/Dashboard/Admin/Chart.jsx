@@ -13,6 +13,7 @@ import {
   Pie,
   Cell,
 } from 'recharts';
+import ScholarshipStats from './Scholarshipstats';
 
 const Chart = () => {
     const {data,isLoading,refetch}=useQuery({
@@ -34,7 +35,7 @@ const Chart = () => {
     serviceCharge: Number(item.serviceCharge),
   }));
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
-
+  
 const categoryData = Object.values(
   data.reduce((acc, item) => {
     const category = item.scholarshipCategory || 'Unknown';
@@ -44,8 +45,10 @@ const categoryData = Object.values(
   }, {})
 );
     return (
-        <div>
+        <div className='h-[1000px]'>
+          <ScholarshipStats data={data}></ScholarshipStats>
 <div className="w-full h-[400px]">
+  
   <h2 className="text-xl font-semibold mb-4 text-center">Fees by Scholarship</h2>
   <ResponsiveContainer width="100%" height="100%">
     <BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
@@ -59,8 +62,8 @@ const categoryData = Object.values(
   </ResponsiveContainer>
 </div>
 
-<div className="w-full h-[400px] mt-10">
-  <h2 className="text-xl font-semibold mb-4 text-center">Scholarship Category Distribution</h2>
+<div className="w-full h-[400px] mt-20">
+  <h2 className="text-xl font-semibold  my-4 text-center">Scholarship Category Distribution</h2>
   <ResponsiveContainer width="100%" height="100%">
     <PieChart>
       <Pie

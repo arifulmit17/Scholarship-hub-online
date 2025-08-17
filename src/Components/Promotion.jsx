@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 
 export default function Promotion() {
   return (
-    <section className="w-11/12 mx-auto my-16">
+    <section className="w-11/12 mx-auto ">
       <div className="hero bg-base-200 rounded-2xl shadow-lg border border-base-300">
         <div className="hero-content flex-col lg:flex-row-reverse gap-8 p-10 lg:p-16">
           {/* Image / Illustration */}
