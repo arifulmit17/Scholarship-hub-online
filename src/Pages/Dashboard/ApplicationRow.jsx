@@ -61,10 +61,10 @@ const ApplicationRow = ({app}) => {
       <th>
         
            <NavLink to={`/dashboard/applicationdetails/${scholarshipId}`}>
-<button className="btn btn-xs">Details</button>
+<button className="btn btn-secondary my-1 btn-xs">Details</button>
         </NavLink>
-            <button onClick={() => setIsOpen(true)} className="btn  btn-xs">Feedback</button>
-            <button onClick={()=>handleStatus()} className="btn  btn-xs">Cancel</button>
+            <button onClick={() => setIsOpen(true)} className="btn my-1 btn-secondary btn-xs">Feedback</button>
+            <button onClick={()=>handleStatus()} className="btn btn-secondary btn-xs">Cancel</button>
          
         </th>
       

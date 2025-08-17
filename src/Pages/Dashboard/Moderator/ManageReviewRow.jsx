@@ -60,7 +60,7 @@ const handleDelete = (id) => {
         
         <th>
            
-            <button onClick={()=>handleDelete(_id)}  className="btn  btn-xs">Delete</button>
+            <button onClick={()=>handleDelete(_id)}  className="btn btn-secondary btn-xs">Delete</button>
         </th>
       </tr>
         </>

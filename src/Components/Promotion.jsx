@@ -10,7 +10,7 @@ export default function Promotion() {
           <img
             src="https://i.postimg.cc/0Qzm235s/member.png"
             alt="Scholarship Hub Promotion"
-            className="w-48 md:w-64 rounded-xl shadow-2xl"
+            className="w-48 md:w-64 rounded-full shadow-2xl"
           />
 
           {/* Text + CTA */}
@@ -18,7 +18,7 @@ export default function Promotion() {
             <h1 className="text-3xl md:text-4xl font-bold text-secondary">
               Unlock Your Scholarship Opportunities
             </h1>
-            <p className="text-base md:text-lg md:ml-12 text-base-content/80 max-w-lg">
+            <p className="text-base md:text-lg md:ml-12 lg:ml-0 text-base-content/80 max-w-lg">
               Join <span className="font-semibold">Scholarship Hub</span> today
               and explore hundreds of scholarships, grants, and study programs
               tailored for students like you.

@@ -114,7 +114,7 @@ const AddScholarship = () => {
         <input {...register("postedByEmail", { required: true })} type="email" defaultValue={user?.email} placeholder="Posted User Email" className="input input-bordered w-full" />
       </div>
 
-      <button className="btn btn-primary w-full">Submit Scholarship</button>
+      <button className="btn btn-secondary w-full">Submit Scholarship</button>
     </form>
   );
 };

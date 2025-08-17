@@ -58,10 +58,10 @@ const handleDelete = (id) => {
         <td>{scholarship?.applicationFees}</td>
         <th>
             <NavLink to={`/scholarshipdetails/${scholarship?._id}`}>
-<button className="btn btn-xs">Details</button>
+<button className="btn mx-1 btn-secondary btn-xs">Details</button>
         </NavLink>
-            <button onClick={() => handleEdit(scholarship)} className="btn  btn-xs">Edit</button>
-            <button onClick={()=>handleDelete(_id)} className="btn  btn-xs">Delete</button>
+            <button onClick={() => handleEdit(scholarship)} className="btn mx-1 btn-secondary  btn-xs">Edit</button>
+            <button onClick={()=>handleDelete(_id)} className="btn btn-secondary btn-xs">Delete</button>
         
             
           

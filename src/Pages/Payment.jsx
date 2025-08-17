@@ -93,9 +93,9 @@ const Payment = () => {
 
   return (
     <div>
-      <Elements stripe={stripePromise}>
+      {/* <Elements stripe={stripePromise}>
       <CheckoutForm applicationFees={applicationFees}/>
-    </Elements>
+    </Elements> */}
         
 <form
       onSubmit={handleSubmit(onSubmit)}
@@ -193,7 +193,7 @@ const Payment = () => {
 
       </div>
 
-      <button className="btn btn-primary w-full mt-4">Submit Application</button>
+      <button className="btn btn-secondary w-full mt-4">Submit Application</button>
     </form>
     
 
