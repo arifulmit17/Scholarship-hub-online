@@ -1,4 +1,4 @@
-Project Name: Scholarship Hub
+Project Name: Scholarship Hub online
 
 Generated Live Site URL: https://scholarship-hub.netlify.app/
 
