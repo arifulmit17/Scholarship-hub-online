@@ -10,7 +10,7 @@ Project description:Our site focuses on a platform for students looking for suit
 
 Features:
 <ul>
-<li>Find scholarship from a wide range of universities. </li>
+<li>Find scholarship from a wide range of local universities. </li>
 <li>Apply easily to as many scholarships as you want</li>
 <li>Give your valuable feedback on specific scholarship if you will</li>
 <li>Separate dashboard for users .</li>
