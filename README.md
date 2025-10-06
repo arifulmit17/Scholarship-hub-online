@@ -14,6 +14,6 @@ Features:
 <li>Apply easily to as many scholarships as user likes</li>
 <li>Give your valuable feedback on specific scholarship if you will</li>
 <li>Separate dashboard for users, moderator and admin.</li>
-<li>Managing your applications any time.</li>
+<li>Managing user applications any time.</li>
 <li>Deleting your unwanted applications.</li>
 </ul>
