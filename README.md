@@ -15,5 +15,5 @@ Features:
 <li>Give your valuable feedback on specific scholarship if you will</li>
 <li>Separate dashboard for users, moderator and admin.</li>
 <li>Managing user applications any time.</li>
-<li>Deleting your unwanted applications.</li>
+<li>Deleting unwanted applications of a user.</li>
 </ul>
