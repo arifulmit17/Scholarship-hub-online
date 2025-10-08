@@ -12,7 +12,7 @@ Features:
 <ul>
 <li>Find scholarship from a wide range of local universities. </li>
 <li>Apply easily to as many scholarships as user likes</li>
-<li>Give your valuable feedback on specific scholarship if you will</li>
+<li>Give valuable feedback on specific scholarship if user will</li>
 <li>Separate dashboard for users, moderator and admin.</li>
 <li>Managing user applications any time.</li>
 <li>Deleting unwanted applications of a user.</li>
