@@ -5,7 +5,7 @@ Generated Live Site URL: https://scholarship-hub.netlify.app/
 Guidance: Browse to the live site link and follow the f.a.q section in home page. 
 
 
-Project description:Our site focuses on a platform for students looking for suitable scholarships with many benefits. 
+Project description: This site focuses on a platform for students looking for suitable scholarships with many benefits. 
 
 
 Features:
