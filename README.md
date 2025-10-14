@@ -18,3 +18,6 @@ Features:
 <li>Managing user applications any time if needed.</li>
 <li>Deleting unwanted applications of a user .</li>
 </ul>
+
+
+Server url: https://github.com/arifulmit17/Scholarship-hub-server
