@@ -20,4 +20,4 @@ Features:
 </ul>
 
 
-Server url: https://github.com/arifulmit17/Scholarship-hub-server
+Server github url: https://github.com/arifulmit17/Scholarship-hub-server
