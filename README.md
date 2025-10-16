@@ -21,3 +21,5 @@ Features:
 
 
 Server github url: https://github.com/arifulmit17/Scholarship-hub-server
+
+Available Api:
